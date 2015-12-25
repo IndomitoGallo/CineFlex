@@ -1,0 +1,83 @@
+/*********DESKTOP*********/
+
+body{
+    font-size: 100%;
+    font-family: sans-serif;
+    width: 970px;
+    margin: 0 auto;
+}
+
+/*******************************Header*********************************/
+header{
+    background-color: #111;
+    height: 55px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+#logo{
+    text-decoration: none;
+    color: #888;
+    font-weight: bold;
+    font-size: 160%;
+    float: left;
+    padding-left: 20px;
+    padding-top: 12px;
+}
+
+/*menubar*/
+.menubar ul {
+    list-style: none;
+    float: left;
+}
+.menubar ul li {
+    float: left;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.menubar ul li a {
+    font-weight:bold;
+    color: #FFF;
+    display: block;
+    text-decoration: none;
+    padding: 0px 10px;
+    margin-bottom: 3px;
+    text-transform:uppercase;
+}
+.menubar ul li:hover a {
+    color:#FFF;
+    text-decoration: underline;
+}
+.menubar li.selected{
+    background:#333;
+}
+
+#triangolo{
+    margin-left: 42px;
+    margin-right: 110px;
+    margin-top: -13px;
+    border-top: 8px solid #708090; /*altezza*/
+    border-left: 8px solid transparent; /*angolo sx*/
+    border-right: 8px solid transparent; /*angolo dx*/
+}
+
+
+#submenu{
+    visibility: hidden;
+    background-color: #F5F5F5;
+    border: 1px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#submenu li{
+    float: none;
+}
+
+#submenu li a{
+    color: red;
+}
+
+.reg_login{
+    margin-left: 310px;
+}
