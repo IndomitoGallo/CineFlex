@@ -5,23 +5,21 @@
     <title>CineFlex</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    
-    <!--Script Menu Smartphone-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+    <!--Script-->
 	<script type="text/javascript" language="Javascript">
 		function mostraMenu(menuCorrente) {
-			if (document.getElementById) {
-				questoMenu = document.getElementById(menuCorrente).style;
-				if (questoMenu.visibility== "visible") {
-					questoMenu.visibility = "hidden";
+			if (document.getElementById(menuCorrente)) {
+				stileMenu = document.getElementById(menuCorrente).style;
+				if (stileMenu.visibility== "visible") {
+					stileMenu.visibility = "hidden";
+					document.getElementById('arrow').src = "img/arrow-right.png";
 				}
 				else {
-					questoMenu.visibility = "visible";
+					stileMenu.visibility = "visible";
+					document.getElementById('arrow').src = "img/arrow-down.png";
 				}
-				return false;
-			}
-			else {
-				return true;
 			}
 		}
 	</script>
@@ -34,20 +32,22 @@
         <nav class="menubar">
             <a id="logo" href="index.html">CineFlex</a>
             <ul>
-                <li class="selected"><a href="#">Home</a></li>
-                <li>
-                    <a href="films.html" onclick="return mostraMenu('submenu')">Film <div id="triangolo"></div></a>
+                <li><a class="selected" href="index.html">Home</a></li>
+                <li onmouseover="mostraMenu('submenu')" onmouseout="mostraMenu('submenu')">
+                    <a href="films.html">Film<img id="arrow" src="img/arrow-right.png"></a>					
                     <ul id="submenu">
                         <li><a href="films.html">Azione</a></li>
                         <li><a href="films.html">Avventura</a></li>
                         <li><a href="films.html">Horror</a></li>
                     </ul>
                 </li>
-            </ul>
-            <ul class="reg_login">
-                <li><a href="#">SignUp</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contattaci</a></li>
+			</ul>
+			<ul id="login_reg">
+				<li><a href="#"><img src="img/signup.png">SignUp</a></li>
+                <li id="login" ><a href="#"><img src="img/login.png">Login</a></li>
+			</ul>
         </nav>
     </header>
 

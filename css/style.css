@@ -1,83 +1,101 @@
-/*********DESKTOP*********/
+/********* DESKTOP *********/
 
-body{
+body {
     font-size: 100%;
     font-family: sans-serif;
     width: 970px;
     margin: 0 auto;
 }
 
-/*******************************Header*********************************/
-header{
+/******************************* header e menu *********************************/
+
+header {
     background-color: #111;
-    height: 55px;
+    height: 60px;
     border: 1px solid;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
-#logo{
+#logo {
     text-decoration: none;
     color: #888;
     font-weight: bold;
     font-size: 160%;
     float: left;
-    padding-left: 20px;
-    padding-top: 12px;
+    margin-left: 20px;
+    margin-top: 15px;
 }
 
-/*menubar*/
+/* menubar */
 .menubar ul {
     list-style: none;
     float: left;
+    margin-top: 10px;
+    margin-left: -20px;
 }
 .menubar ul li {
     float: left;
-    padding-left: 5px;
-    padding-top: 5px;
+    margin-left: 5px;
+    position: relative;
 }
 .menubar ul li a {
-    font-weight:bold;
+    font-weight: bold;
     color: #FFF;
     display: block;
     text-decoration: none;
-    padding: 0px 10px;
-    margin-bottom: 3px;
-    text-transform:uppercase;
+    padding: 10px 5px 9px;
+    text-transform: uppercase;
+    border: 1px solid #111;
+    border-radius: 6px;
 }
 .menubar ul li:hover a {
-    color:#FFF;
     text-decoration: underline;
 }
-.menubar li.selected{
-    background:#333;
+.menubar ul li a.selected {
+    background-color: #333;
 }
 
-#triangolo{
-    margin-left: 42px;
-    margin-right: 110px;
-    margin-top: -13px;
-    border-top: 8px solid #708090; /*altezza*/
-    border-left: 8px solid transparent; /*angolo sx*/
-    border-right: 8px solid transparent; /*angolo dx*/
+#arrow {
+   width: 15px;
+   height: 14px;
+   margin-left: 5px;
 }
 
-
-#submenu{
+#submenu {
     visibility: hidden;
     background-color: #F5F5F5;
-    border: 1px solid;
-    border-radius: 8px;
-    margin-top: 10px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    position: absolute;
+    top: 29px;
+    left: 19px;
 }
-
-#submenu li{
+#submenu li {
     float: none;
+    margin-left: -40px;
+}
+#submenu li a {
+    color: #111;
+    padding: 5px 5px 4px;
+    text-decoration: none;
+    border: none;
+    border-radius: 0px;
+}
+#submenu li:hover a {
+    text-decoration: underline;
 }
 
-#submenu li a{
-    color: red;
+/* menubar (login & signup) */
+#login_reg {
+    float: right;
 }
 
-.reg_login{
-    margin-left: 310px;
+#login {
+    margin-right: 20px;
+}
+
+#login_reg img {
+   width: 15px;
+   height: 14px;
+   margin-right: 5px;
 }
