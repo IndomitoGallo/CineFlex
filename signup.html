@@ -12,6 +12,7 @@
 	
     <!--Script-->
 	<script type="text/javascript" language="Javascript" src="js/menubar.js"></script>
+	<script type="text/javascript" language="Javascript" src="js/signup.js"></script>
     
 </head>
 
@@ -21,7 +22,7 @@
         <nav class="menubar">
             <a id="logo" href="index.html">CineFlex</a>
             <ul>
-                <li><a class="selected" href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li onmouseover="mostraMenu('submenu')" onmouseout="mostraMenu('submenu')">
                     <a href="films.html">Film<img id="arrow" src="img/arrow-right.png"></a>					
                     <ul id="submenu">
@@ -34,7 +35,7 @@
 				<li><a href="contact_us.html">Contattaci</a></li>
 			</ul>
 			<ul id="login_reg">
-				<li><a href="signup.html"><img src="img/signup.png">SignUp</a></li>
+				<li><a class="selected" href="signup.html"><img src="img/signup.png">SignUp</a></li>
                 <li id="login" onmouseover="mostraLogin('login_form')" onmouseout="mostraLogin('login_form')">
                     <a href=""><img src="img/login.png">Login</a>
                     <form id="login_form">
@@ -56,24 +57,26 @@
                 dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
                 repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
                 veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
-                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi.               
             </p>
         </aside>        
         <section class="col-md-9 col-sm-9 col-xs-12">
-            <h1>Benvenuto su CineFlex!</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
-                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
-                repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
-                veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates
-                quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas
-                repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam
-                nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci
-                tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias?
-                Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!    
-            </p>
-            <p>Luca e Lorenzo.</p>
+			<div id="OK">
+				<h1>Registrazione</h1>
+				<div id="ERROR"></div>
+				<form action="" method="POST">
+					<label for="name">Nome: </label>
+					<input type="text" id="name" name="name" size="30" maxlength="20" required><br>
+					<label for="surname">Cognome: </label>
+					<input type="text" id="surname" name="surname" size="30" maxlength="20" required><br>
+					<label for="mail">Mail: </label>
+					<input type="email" id="mail" name="mail" placeholder="example@cineflex.it" size="30" maxlength="30" required><br>
+					<label for="utente">Username: </label>
+					<input type="text" id="utente" name="utente" size="30" maxlength="30" required><br>
+					<label for="pswd">Password (max 8 caratteri):</label>
+					<input type="password" id="pswd" name="pswd" size="30" maxlength="8" required><br>
+					<input type="submit" name="submit" onclick="registra(event)" value="Registrati">
+				</form>
+			</div>
         </section>
     </div>
     
@@ -81,6 +84,6 @@
         <small id="copyright">Copyright © 2016 cineflex.it - All Rights Reserved.</small>
         <small id="webmaster">Webmaster: Luca Talocci & Lorenzo Bernabei</small>
     </footer>
-
+		
 </body>
 </html>

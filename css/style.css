@@ -100,4 +100,117 @@ header {
    margin-right: 5px;
 }
 
+#login_form {
+    visibility: hidden;
+    background-color: #F5F5F5;
+    border: 1px solid #111;
+    border-radius: 6px;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#login_form label {
+    display: block;
+    color: #111;
+    padding: 5px 5px;
+}
+#login_form input {
+    margin: 0px 5px;
+}
+#login_form [type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #111;
+    color: #FFF;
+}
+
 /******************************* body *********************************/
+
+#container {
+    float: left;
+}
+
+.col-md-3, .col-md-9 {
+    float: left;    
+    background-color: #F5F5F5;
+    border: 1px solid #111;
+    border-radius: 6px;
+    margin-bottom: 3px;
+    background-image: url(../img/film.png);
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.col-md-3 {
+    width: 24%;
+}
+
+.col-md-9 {
+    width: 74%;
+    margin-left: 1.5%;
+}
+
+.col-md-3 h1, .col-md-9 h1 {
+    padding: 0px 15px;
+}
+
+.col-md-3 p, .col-md-9 p {
+    padding: 0px 15px;
+    text-align: justify;
+}
+
+.col-md-3 form, .col-md-9 form {
+    padding: 0px 15px;
+    padding-bottom: 15px;
+}
+
+.col-md-3 label, .col-md-9 label {
+    display: block;
+    color: #111;
+    padding: 5px 0px;
+}
+.col-md-3 input, .col-md-9 input {
+    margin: 5px 0px;
+}
+
+.col-md-3 [type="submit"], .col-md-9 [type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #111;
+    color: #FFF;
+}
+
+/******************************* footer *********************************/
+
+footer {
+    background-color: #111;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #FFF;
+    clear: both;
+}
+
+small {
+    margin-top: 7px;
+}
+
+#copyright {
+    float: left;
+    margin-left: 25px;
+}
+
+#webmaster {
+    float: right;
+    margin-right: 25px;
+}

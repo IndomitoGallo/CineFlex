@@ -11,3 +11,15 @@ function mostraMenu(menuCorrente) {
 				}
 			}
 		}
+		
+function mostraLogin(loginCorrente) {
+			if (document.getElementById(loginCorrente)) {
+				stileLogin = document.getElementById(loginCorrente).style;
+				if (stileLogin.visibility== "visible") {
+					stileLogin.visibility = "hidden";
+				}
+				else {
+					stileLogin.visibility = "visible";
+				}
+			}
+		}

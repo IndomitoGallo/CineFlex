@@ -34,11 +34,49 @@
 				<li><a href="contact_us.html">Contattaci</a></li>
 			</ul>
 			<ul id="login_reg">
-				<li><a href="#"><img src="img/signup.png">SignUp</a></li>
-                <li id="login"><a href="#"><img src="img/login.png">Login</a></li>
+				<li><a href="signup.html"><img src="img/signup.png">SignUp</a></li>
+                <li id="login" onmouseover="mostraLogin('login_form')" onmouseout="mostraLogin('login_form')">
+                    <a href="#"><img src="img/login.png">Login</a>
+                    <form id="login_form">
+                        <label for="user">Username:</label>
+                        <input id="user" name="user" type="text" required><br>
+                        <label for="pwd">Password:</label>
+                        <input id="pwd" name="pwd" type="password" required><br>
+                        <input type="submit" id="submit" name="submit" value="Login">
+                    </form>
+                </li>
 			</ul>
         </nav>
     </header>
+    
+    <div id="container">
+        <aside class="col-md-3 col-sm-3 col-xs-12">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
+                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
+                repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
+                veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem.
+            </p>
+        </aside>        
+        <section class="col-md-9 col-sm-9 col-xs-12">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
+                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
+                repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
+                veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates
+                quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas
+                repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam
+                nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci
+                tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias?
+                Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!    
+            </p>        
+        </section>
+    </div>
+    
+    <footer>
+        <small id="copyright">Copyright © 2016 cineflex.it - All Rights Reserved.</small>
+        <small id="webmaster">Webmaster: Luca Talocci & Lorenzo Bernabei</small>
+    </footer>
 
 </body>
 </html>
