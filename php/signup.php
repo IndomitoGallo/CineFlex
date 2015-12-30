@@ -3,14 +3,18 @@
     //CONNESSIONE AL DATABASE
     $servername = "localhost";
     $username = "root";
-    $password = "aeg20e";
+    $password = "";
     $dbname = "dbpw";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
     //controllo sulla connessione
     if(!$conn) {
-        die("Connection failed: " . mysqli_connect_error());    
+        /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
+        dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
+        error_log(date("Y-m-d H:i:s") . " - Connection failed: " . mysqli_connect_error() . "\n", 3, "./error.log");
+        die("DB_ERROR"); //nel js lanceremo un messaggio: non è stato possibile effettuare la registrazione    
     }
-    
+
     //Prendo mail e username in ingresso per verificare che non siano già presenti nel Database
     $mail = $_GET['mail'];
     $user = $_GET['utente'];
@@ -27,7 +31,7 @@
         
         echo "USER_ERROR"; //nel js lanceremo un messaggio: username già esistente
         
-    } elseif(mysqli_num_rows($result2) > 0) {
+    } else if(mysqli_num_rows($result2) > 0) {
         
         echo "MAIL_ERROR"; //nel js lanceremo un messaggio: esiste già un account associato a questa mail
         
@@ -36,18 +40,20 @@
         $surname = $_GET['surname'];
         $pwd = $_GET['pswd'];
         
-        $sql = "INSERT INTO suggerimento VALUES('{$user}','{$name}', '{$surname}', '{$pwd}', '{$mail}')";
+        $sql = "INSERT INTO utenti VALUES('{$user}','{$name}', '{$surname}', '{$pwd}', '{$mail}')";
         
         //Eseguo la query
         if(!mysqli_query($conn, $sql)){
+            /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
+            dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
+            error_log(date("Y-m-d H:i:s") . " - Error on: " . $sql . "\n" . mysqli_error($conn) . "\n", 3, "./error.log");
             echo "DB_ERROR"; //nel js lanceremo un messaggio: non è stato possibile effettuare la registrazione
-        }
-            
-        //Chiudo la connessione
-        mysqli_close($conn);
-        
-        echo "OK";
+        } else {
+            echo "OK";
+        }        
     }
     
+    //Chiudo la connessione
+    mysqli_close($conn);
     
 ?>

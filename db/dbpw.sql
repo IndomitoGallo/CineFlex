@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS dbpw;
 
 USE dbpw;
 
-CREATE TABLE utenti(
+CREATE TABLE utente(
 	username varchar(30) PRIMARY KEY,
     nome varchar(20) NOT NULL,
     cognome varchar(20) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE utenti(
 	email varchar(30) NOT NULL
 )Engine=InnoDB;
 
-CREATE TABLE commenti(
+CREATE TABLE commento(
 	id int auto_increment PRIMARY KEY,
     username varchar(30) NOT NULL,
 	nota varchar(255) NOT NULL,
