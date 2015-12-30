@@ -1,4 +1,6 @@
 function registra(event) {
+    
+    /*elimina l'azione di default associata all'input type="submit" di ricaricare tutta la pagina*/
     event.preventDefault();
 
     var xmlhttp = new XMLHttpRequest();
@@ -8,6 +10,24 @@ function registra(event) {
             if(xmlhttp.responseText == "OK") {
                 div = document.getElementById('OK');
                 div.innerHTML = '<h1>Registrazione</h1><p>Registrazione avvenuta con successo.<br>Ora puoi fare login.</p>';
+            }
+            else if(xmlhttp.responseText == "USER_ERROR") {
+                div = document.getElementById('ERROR');
+                div.innerHTML = 'Username già esistente!';
+                div.style.color = "red";
+                div.style.textDecoration = "underline";
+                div.style.padding = "5px 15px";
+            }
+            else if(xmlhttp.responseText == "MAIL_ERROR") {
+                div = document.getElementById('ERROR');
+                div.innerHTML = 'Esiste già un account registrato con quella email!';
+                div.style.color = "red";
+                div.style.textDecoration = "underline";
+                div.style.padding = "5px 15px";
+            }
+            else if(xmlhttp.responseText == "DB_ERROR") {
+                div = document.getElementById('OK');
+                div.innerHTML = '<h1>Registrazione</h1><p style="text-decoration: underline; color: red;">Non è stato possibile effettuare la registrazione.<br>Riprova più tardi.</p>';
             }
             else {
                 div = document.getElementById('ERROR');
