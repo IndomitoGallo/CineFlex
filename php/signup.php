@@ -11,7 +11,7 @@
     if(!$conn) {
         /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
         dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
-        error_log(date("Y-m-d H:i:s") . " - Connection failed: " . mysqli_connect_error() . "\n", 3, "./error.log");
+        error_log(date("Y-m-d H:i:s") . " - DB connection failed: " . mysqli_connect_error() . "\n", 3, "./error.log");
         die("DB_ERROR"); //nel js lanceremo un messaggio: non è stato possibile effettuare la registrazione    
     }
 
@@ -46,7 +46,7 @@
         if(!mysqli_query($conn, $sql)){
             /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
             dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
-            error_log(date("Y-m-d H:i:s") . " - Error on: " . $sql . "\n" . mysqli_error($conn) . "\n", 3, "./error.log");
+            error_log(date("Y-m-d H:i:s") . " - DB query failed on: " . $sql . "\nMessagge: " . mysqli_error($conn) . "\n", 3, "./error.log");
             echo "DB_ERROR"; //nel js lanceremo un messaggio: non è stato possibile effettuare la registrazione
         } else {
             echo "OK";
