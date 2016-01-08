@@ -5,8 +5,10 @@
     <title>CineFlex</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Icona del Sito-->
+	<link href='img/icona_film.ico' rel='icon' type='image/x-icon'/>
+	<!--Stili-->
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen and (min-width:992px)">
-	<!--Responsive-->
 	<link rel="stylesheet" type="text/css" href="css/smartphone.css" media="screen and (max-width:767px)">
 	<link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (min-width:768px) and (max-width:991px)">
 	
