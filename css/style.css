@@ -1,5 +1,9 @@
 /********* DESKTOP *********/
 
+html {
+    background-color: #F5F5F5;    
+}
+
 body {
     font-size: 100%;
     font-family: sans-serif;
@@ -94,6 +98,10 @@ header {
     margin-right: 20px;
 }
 
+#login a {
+    curson: pointer;
+}
+
 #login_reg img {
    width: 15px;
    height: 14px;
@@ -106,7 +114,7 @@ header {
     border: 1px solid #111;
     border-radius: 6px;
     position: absolute;
-    top: 40px;
+    top: 39px;
     right: 0px;
     text-transform: uppercase;
     font-weight: bold;
@@ -193,6 +201,94 @@ header {
     text-transform: uppercase;
     background-color: #111;
     color: #FFF;
+}
+
+.col-md-3 button, .col-md-9 button {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #111;
+    color: #FFF;
+}
+
+#film {
+    list-style: none;
+    margin-left: -23px;
+    margin-top: 8px;
+}
+
+#film li {
+    padding-top: 10px;
+}
+
+#film li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #111;
+    cursor: pointer;
+}
+
+#film li:hover a {
+    text-decoration: underline;
+}
+
+#arrowanim, #arrowadvn, #arrowcmdy, #arrowdram, #arrowfnts, #arrowfnty, #arrowwar, #arrowhror,
+#arrowthrl, #arrowwstr {
+   width: 15px;
+   height: 14px;
+   margin-left: 5px;
+}
+
+.genere {
+    display: none;
+}
+
+#film .genere li a {        /* aggiunto #film causa collisione con .genere */
+    text-decoration: none;
+}
+
+#film .genere li:hover a {      /* aggiunto #film causa collisione con .genere */
+    text-decoration: underline;
+}
+
+.poster {
+    width: 200px;
+    height: auto;
+    float: left;
+}
+
+.info {
+    margin-top: 60px;
+    margin-left: 220px;
+}
+
+.trama {
+    margin-top: 60px;
+    clear: both;
+}
+
+#commenti{
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid black;
+    margin: 0px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+#nuovo_comm {
+    margin-top: 25px;
+}
+
+#nuovo_comm b {
+    display: block;
+    margin-bottom: 15px;
+    margin-left: 15px;
 }
 
 /******************************* footer *********************************/

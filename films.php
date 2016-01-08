@@ -12,19 +12,19 @@
 	
     <!--Script-->
 	<script type="text/javascript" language="Javascript" src="js/menubar.js"></script>
-	<script type="text/javascript" language="Javascript" src="js/signup.js"></script>
-    
+    <script type="text/javascript" language="Javascript" src="js/listafilm.js"></script>
+		
 </head>
 
 <body>
-
+	
     <header>
         <nav class="menubar">
             <a id="logo" href="index.html">CineFlex</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li onmouseover="mostraMenu('submenu')" onmouseout="mostraMenu('submenu')">
-                    <a href="films.php">Film<img id="arrow" src="img/arrow-right.png"></a>					
+                    <a class="selected" href="films.php">Film<img id="arrow" src="img/arrow-right.png"></a>					
                     <ul id="submenu">
                         <li><a href="films.php?genere=anim">Animazione</a></li>
                         <li><a href="films.php?genere=advn">Avventura</a></li>
@@ -42,9 +42,9 @@
 				<li><a href="contact_us.html">Contattaci</a></li>
 			</ul>
 			<ul id="login_reg">
-				<li><a class="selected" href="signup.html"><img src="img/signup.png">SignUp</a></li>
+				<li><a href="signup.html"><img src="img/signup.png">SignUp</a></li>
                 <li id="login" onmouseover="mostraLogin('login_form')" onmouseout="mostraLogin('login_form')">
-                    <a href=""><img src="img/login.png">Login</a>
+                    <a href="#"><img src="img/login.png">Login</a>
                     <form id="login_form">
                         <label for="user">Username:</label>
                         <input id="user" name="user" type="text" required><br>
@@ -67,23 +67,62 @@
             </p>
         </aside>        
         <section class="col-md-9 col-sm-9 col-xs-12">
-			<div id="OK">
-				<h1>Registrazione</h1>
-				<div id="ERROR"></div>
-				<form id="reg_form" method="POST">
-					<label for="name">Nome: </label>
-					<input type="text" id="name" name="name" size="30" maxlength="20" required><br>
-					<label for="surname">Cognome: </label>
-					<input type="text" id="surname" name="surname" size="30" maxlength="20" required><br>
-					<label for="mail">Mail: </label>
-					<input type="email" id="mail" name="mail" placeholder="email@example.com" size="30" maxlength="30" required><br>
-					<label for="utente">Username: </label>
-					<input type="text" id="utente" name="utente" size="30" maxlength="30" required><br>
-					<label for="pswd">Password (max 8 caratteri):</label>
-					<input type="password" id="pswd" name="pswd" size="30" maxlength="8" required><br>
-					<input type="submit" name="submit" onclick="registra(event)" value="Registrati">
-				</form>
-			</div>
+			<ul id="film">
+				<li onclick="mostraFilm('anim')">
+					<a>Animazione<img id="arrowanim" src="img/arrow-right.png"></a>
+					<ul id="anim" class="genere">
+					</ul>
+				</li>
+                <li onclick="mostraFilm('advn')">
+					<a>Avventura<img id="arrowadvn" src="img/arrow-right.png"></a>
+					<ul id="advn" class="genere">
+					</ul>
+				</li>
+				<li onclick="mostraFilm('cmdy')">
+					<a>Commedia<img id="arrowcmdy" src="img/arrow-right.png"></a>
+					<ul id="cmdy" class="genere">
+					</ul>
+				</li>
+				<li onclick="mostraFilm('dram')">
+					<a>Drammatico<img id="arrowdram" src="img/arrow-right.png"></a>
+					<ul id="dram" class="genere">
+					</ul>
+				</li>
+				<li onclick="mostraFilm('fnts')">
+					<a>Fantascienza<img id="arrowfnts" src="img/arrow-right.png"></a>
+					<ul id="fnts" class="genere">
+						<li><a href="film/alien.html">Alien</a></li>
+						<li><a href="film/interstellar.html">Interstellar</a></li>
+					</ul>
+				</li>
+                <li onclick="mostraFilm('fnty')">
+					<a>Fantasy<img id="arrowfnty" src="img/arrow-right.png"></a>
+					<ul id="fnty" class="genere">
+					</ul>
+				</li>
+				<li onclick="mostraFilm('war')">
+					<a>Guerra<img id="arrowwar" src="img/arrow-right.png"></a>
+					<ul id="war" class="genere">
+					</ul>
+				</li>
+                <li onclick="mostraFilm('hror')">
+					<a>Horror<img id="arrowhror" src="img/arrow-right.png"></a>
+					<ul id="hror" class="genere">
+						<li><a href="film/black_sheep.html">Black Sheep</a></li>
+						<li><a href="film/wrong_turn.html">Wrong Turn</a></li>
+					</ul>				
+				</li>
+                <li onclick="mostraFilm('thrl')">
+					<a>Thriller<img id="arrowthrl" src="img/arrow-right.png"></a>
+					<ul id="thrl" class="genere">
+					</ul>
+				</li>
+				<li onclick="mostraFilm('wstr')">
+					<a>Western<img id="arrowwstr" src="img/arrow-right.png"></a>
+					<ul id="wstr" class="genere">
+					</ul>
+				</li>
+			</ul>       
         </section>
     </div>
     
@@ -91,6 +130,14 @@
         <small id="copyright">Copyright © 2016 cineflex.it - All Rights Reserved.</small>
         <small id="webmaster">Webmaster: Luca Talocci & Lorenzo Bernabei</small>
     </footer>
-		
+	
+	<?php
+	if(isset($_GET['genere'])) {?>
+		<script type="text/javascript">
+			mostraFilm("<?php echo $_GET['genere']; ?>");
+		</script>
+	<?php }	
+	?>
+
 </body>
 </html>

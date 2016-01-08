@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>CineFlex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen and (min-width:992px)">
+	<!--Responsive-->
+	<link rel="stylesheet" type="text/css" href="../css/smartphone.css" media="screen and (max-width:767px)">
+	<link rel="stylesheet" type="text/css" href="../css/tablet.css" media="screen and (min-width:768px) and (max-width:991px)">
+    
+    <!--Script-->
+	<script type="text/javascript" language="Javascript" src="../js/menubarFilm.js"></script>
+    <script type="text/javascript" language="Javascript" src="../js/commento.js"></script>
+    
+</head>
+
+<body onload="">
+
+    <header>
+        <nav class="menubar">
+            <a id="logo" href="../index.html">CineFlex</a>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li onmouseover="mostraMenu('submenu')" onmouseout="mostraMenu('submenu')">
+                    <a class="selected" href="../films.php">Film<img id="arrow" src="../img/arrow-right.png"></a>					
+                    <ul id="submenu">
+                        <li><a href="../films.php?genere=anim">Animazione</a></li>
+                        <li><a href="../films.php?genere=advn">Avventura</a></li>
+                        <li><a href="../films.php?genere=cmdy">Commedia</a></li>
+                        <li><a href="../films.php?genere=dram">Drammatico</a></li>
+                        <li><a href="../films.php?genere=fnts">Fantascienza</a></li>
+                        <li><a href="../films.php?genere=fnty">Fantasy</a></li>
+                        <li><a href="../films.php?genere=war">Guerra</a></li>
+                        <li><a href="../films.php?genere=hror">Horror</a></li>
+                        <li><a href="../films.php?genere=thrl">Thriller</a></li>
+                        <li><a href="../films.php?genere=wstr">Western</a></li>                        
+                    </ul>
+                </li>
+				<li><a href="../about.html">About</a></li>
+				<li><a href="../contact_us.html">Contattaci</a></li>
+			</ul>
+			<ul id="login_reg">
+				<li><a href="../signup.html"><img src="../img/signup.png">SignUp</a></li>
+                <li id="login" onmouseover="mostraLogin('login_form')" onmouseout="mostraLogin('login_form')">
+                    <a><img src="../img/login.png">Login</a>
+                    <form id="login_form">
+                        <label for="user">Username:</label>
+                        <input id="user" name="user" type="text" required><br>
+                        <label for="pwd">Password:</label>
+                        <input id="pwd" name="pwd" type="password" required><br>
+                        <input type="submit" id="submit" name="submit" value="Login">
+                    </form>
+                </li>
+			</ul>
+        </nav>
+    </header>
+    
+    <div id="container">
+        <aside class="col-md-3 col-sm-3 col-xs-12">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
+                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
+                repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
+                veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
+                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi. 
+            </p>
+        </aside>        
+        <section class="col-md-9 col-sm-9 col-xs-12">
+            <p><img src="../img/poster/poster-alien.jpg" class="poster"></p>
+            <p class="info">                
+                <b>Titolo:</b> Alien<br><br>
+                <b>Anno:</b> 1979<br><br>
+                <b>Regia:</b> Ridley Scott.<br><br>
+                <b>Interpreti:</b> Sigourney Weaver, Yaphet Kotto, Veronica Cartwright, Ian Holm,
+                Tom Skerritt, Harry Dean Stanton, John Hurt.<br><br>
+                <b>Durata:</b> 117 min
+            </p>
+            <p class="trama">
+                <b>Trama:</b><br>
+                L'astronave Nostromo sbarca su un pianeta da cui proviene un SOS, ma la colonia sembra
+                essere disabitata. Nel corso di una ricognizione, un membro dell'equipaggio viene attaccato
+                da un essere a forma di ragno. La situazione precipita: i coloni sono stati in realtà
+                sterminati da una razza aliena che ha trasformato la base in una gigantesca covata.
+                L'idea della specie aliena che usa il corpo degli esseri umani come ospite per la
+                proliferazione parassitaria non era nuova già nel 1979 - basti pensare a L'invasione degli
+                Ultracorpi di Siegel. Eppure l'alieno, concepito dalla follia visionaria di H.R. Giger
+                e realizzato da Carlo Rambaldi, è divenuto nel corso degli anni una vera e propria icona,
+                cinematografica e non solo. Esempio sublime di bellezza e malvagità, può essere visto come
+                una versione estrema di "dark lady" - e non a caso, forse, è femmina, nera e sfuggente.
+                Una specie totalmente priva di qualsiasi moralità, che ha come unico scopo la sopravvivenza
+                e la riproduzione, è una trovata geniale nella sua semplicità: gli alieni hanno la stessa
+                psicologia delle mosche, ma in più sono estremamente letali. 
+                Lo stesso titolo, Alien, sembra riferirsi tanto all'essere alieno quanto all'ambiente entro
+                cui si svolge la storia: le creature divengono padrone di tutto ciò che serve al loro
+                scopo, tanto dei corpi usati come materia prima organica quanto della base spaziale,
+                nonostante questa sia opera degli uomini. L'angoscia generata dal film sta proprio nel
+                disperato girovagare dell'equipaggio tra i claustrofobici labirinti della colonia, in
+                cerca di un'impossibile salvezza. Sale progressivamente, nei personaggi e nel pubblico,
+                la consapevolezza che gli alieni braccano gli umani come il gatto fa col topo. Un gioco
+                crudele che al topo riserva solo due finali: la fuga, o la morte. 
+                La più inquietante meditazione sul ruolo della specie umana nel cosmo che il cinema abbia
+                mai offerto.    
+            </p>
+            <p><b>Commenti:</b></p>
+            <div id="commenti"></div>
+            <div id="nuovo_comm">
+                <b>Nuovo commento (max 255 caratteri):</b>
+                <div id="msg"></div>
+                <form id="form_comm">
+                    <textarea onclick="mostraMsg()" id="nota" name="nota" rows="4" cols="95" maxlength="255" placeholder="Scrivi ..."  readonly></textarea><br>
+                    <button onclick="mostraMsg()" type="button">Invia</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <small id="copyright">Copyright © 2016 cineflex.it - All Rights Reserved.</small>
+        <small id="webmaster">Webmaster: Luca Talocci & Lorenzo Bernabei</small>
+    </footer>
+
+</body>
+</html>

@@ -15,11 +15,13 @@ CREATE TABLE commento(
     username varchar(30) NOT NULL,
 	nota varchar(255) NOT NULL,
     data datetime NOT NULL,
+    film varchar(50) NOT NULL,
 	FOREIGN KEY (username) REFERENCES utenti(username)
     	ON DELETE CASCADE,
     	ON UPDATE CASCADE
 )Engine=InnoDB;
 
+/*
 CREATE TABLE film(
 	titolo varchar(30) PRIMARY KEY,
 	regista varchar(30) NOT NULL,
@@ -28,3 +30,4 @@ CREATE TABLE film(
     durata int NOT NULL,
     genere varchar(15) NOT NULL
 )Engine=InnoDB;
+*/

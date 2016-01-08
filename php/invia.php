@@ -23,7 +23,7 @@
     l'indirizzo specificato come GMAIL username, ma per il nostro scopo è una mancanza trascurabile
     dal momento che il ReplyTo non viene modificato.
     E' possibile quindi rispondere alle mail degli utenti */
-    $mail->SetFrom($mitt, $name);
+    $mail->SetFrom($mitt, "Cineflex");
     $mail->AddReplyTo($mitt, $name);
     // to
     $address = "cineflex15@gmail.com";
@@ -35,7 +35,7 @@
     
     // invio
     if(!$mail->Send()) {
-        error_log(date("Y-m-d H:i:s") . " - Mailer error: " . $mail->ErrorInfo, 3, "./error.log");
+        error_log(date("Y-m-d H:i:s") . " - Mailer error: " . $mail->ErrorInfo . "\n", 3, "./error.log");
         echo "ERROR";
     } else {
         echo "OK";
