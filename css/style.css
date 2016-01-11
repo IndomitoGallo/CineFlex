@@ -99,7 +99,7 @@ header {
 }
 
 #login a {
-    curson: pointer;
+    cursor: pointer;
 }
 
 #login_reg img {
@@ -145,7 +145,7 @@ header {
 }
 
 .col-md-3, .col-md-9 {
-    float: left;    
+    float: left;
     background-color: #F5F5F5;
     border: 1px solid #111;
     border-radius: 6px;
@@ -157,11 +157,12 @@ header {
 
 .col-md-3 {
     width: 24%;
+    margin-left: -99.5%;
 }
 
 .col-md-9 {
     width: 74%;
-    margin-left: 1.5%;
+    margin-left: 25.5%;
 }
 
 .col-md-3 h1, .col-md-9 h1 {

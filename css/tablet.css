@@ -1,0 +1,309 @@
+/********* TABLET *********/
+
+html {
+    background-color: #F5F5F5;    
+}
+
+body {
+    font-size: 100%;
+    font-family: sans-serif;
+    width: 750px;
+    margin: 0 auto;
+}
+
+/******************************* header e menu *********************************/
+
+header {
+    background-color: #111;
+    height: 60px;
+    border: 1px solid;
+    border-radius: 6px;
+}
+
+#logo {
+    text-decoration: none;
+    color: #888;
+    font-weight: bold;
+    font-size: 160%;
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+/* menubar */
+.menubar ul {
+    list-style: none;
+    float: left;
+    margin-top: 10px;
+    margin-left: -20px;
+}
+.menubar ul li {
+    float: left;
+    margin-left: 5px;
+    position: relative;
+}
+.menubar ul li a {
+    font-weight: bold;
+    color: #FFF;
+    display: block;
+    text-decoration: none;
+    padding: 10px 5px 9px;
+    text-transform: uppercase;
+    border: 1px solid #111;
+    border-radius: 6px;
+}
+.menubar ul li:hover a {
+    text-decoration: underline;
+}
+.menubar ul li a.selected {
+    background-color: #333;
+}
+
+#arrow {
+   width: 15px;
+   height: 14px;
+   margin-left: 5px;
+}
+
+#submenu {
+    visibility: hidden;
+    background-color: #F5F5F5;
+    border: 1px solid #111;
+    border-radius: 6px;
+    position: absolute;
+    top: 29px;
+    left: 19px;
+}
+#submenu li {
+    float: none;
+    margin-left: -40px;
+}
+#submenu li a {
+    color: #111;
+    padding: 5px 5px 4px;
+    text-decoration: none;
+    border: none;
+    border-radius: 0px;
+}
+#submenu li:hover a {
+    text-decoration: underline;
+}
+
+/* menubar (login & signup) */
+#login_reg {
+    float: right;
+}
+
+#login {
+    margin-right: 20px;
+}
+
+#login a {
+    cursor: pointer;
+}
+
+#login_reg img {
+   width: 15px;
+   height: 14px;
+   margin-right: 5px;
+}
+
+#login_form {
+    visibility: hidden;
+    background-color: #F5F5F5;
+    border: 1px solid #111;
+    border-radius: 6px;
+    position: absolute;
+    top: 39px;
+    right: 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#login_form label {
+    display: block;
+    color: #111;
+    padding: 5px 5px;
+}
+#login_form input {
+    margin: 0px 5px;
+}
+#login_form [type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #111;
+    color: #FFF;
+}
+
+/******************************* body *********************************/
+
+.col-sm-3, .col-sm-9 {
+    float: left;
+    background-color: #F5F5F5;
+    border: 1px solid #111;
+    border-radius: 6px;
+    margin-bottom: 3px;
+    background-image: url(../img/film.png);
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.col-sm-3, .col-sm-9 {
+    width: 99%;
+    margin-left: 0.4%;
+}
+
+.col-sm-3 h1, .col-sm-9 h1 {
+    padding: 0px 15px;
+}
+
+.col-sm-3 p, .col-sm-9 p {
+    padding: 0px 15px;
+    text-align: justify;
+}
+
+.col-sm-3 form, .col-sm-9 form {
+    padding: 0px 15px;
+    padding-bottom: 15px;
+}
+
+.col-sm-3 label, .col-sm-9 label {
+    display: block;
+    color: #111;
+    padding: 5px 0px;
+}
+
+.col-sm-3 input, .col-sm-9 input {
+    margin: 5px 0px;
+}
+
+.col-sm-3 textarea, .col-sm-9 textarea {
+    margin: 5px 0px;
+}
+
+.col-sm-3 [type="submit"], .col-sm-9 [type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #111;
+    color: #FFF;
+}
+
+.col-sm-3 button, .col-sm-9 button {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #111;
+    color: #FFF;
+}
+
+#film {
+    list-style: none;
+    margin-left: -23px;
+    margin-top: 8px;
+}
+
+#film li {
+    padding-top: 10px;
+}
+
+#film li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #111;
+    cursor: pointer;
+}
+
+#film li:hover a {
+    text-decoration: underline;
+}
+
+#arrowanim, #arrowadvn, #arrowcmdy, #arrowdram, #arrowfnts, #arrowfnty, #arrowwar, #arrowhror,
+#arrowthrl, #arrowwstr {
+   width: 15px;
+   height: 14px;
+   margin-left: 5px;
+}
+
+.genere {
+    display: none;
+}
+
+#film .genere li a {        /* aggiunto #film causa collisione con .genere */
+    text-decoration: none;
+}
+
+#film .genere li:hover a {      /* aggiunto #film causa collisione con .genere */
+    text-decoration: underline;
+}
+
+.poster {
+    width: 200px;
+    height: auto;
+    float: left;
+}
+
+.info {
+    margin-top: 60px;
+    margin-left: 220px;
+}
+
+.trama {
+    margin-top: 60px;
+    clear: both;
+}
+
+#commenti{
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid black;
+    margin: 0px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+#nuovo_comm {
+    margin-top: 25px;
+}
+
+#nuovo_comm b {
+    display: block;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+/******************************* footer *********************************/
+
+footer {
+    background-color: #111;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #FFF;
+    clear: both;
+}
+
+small {
+    margin-top: 7px;
+}
+
+#copyright {
+    float: left;
+    margin-left: 25px;
+}
+
+#webmaster {
+    float: right;
+    margin-right: 25px;
+}

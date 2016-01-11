@@ -59,15 +59,7 @@
         </nav>
     </header>
     
-    <div id="container">
-        <aside class="col-md-3 col-sm-3 col-xs-12">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
-                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
-                repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
-                veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem.
-            </p>
-        </aside>        
+    <div id="container">       
         <section class="col-md-9 col-sm-9 col-xs-12">
 			<ul id="film">
 				<li onclick="mostraFilm('anim')">
@@ -126,6 +118,14 @@
 				</li>
 			</ul>       
         </section>
+		<aside class="col-md-3 col-sm-3 col-xs-12">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
+                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
+                repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
+                veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem.
+            </p>
+        </aside> 
     </div>
     
     <footer>
