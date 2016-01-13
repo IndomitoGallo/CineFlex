@@ -263,13 +263,17 @@ header {
 }
 
 .info {
-    margin-top: 60px;
+    margin-top: 50px;
     margin-left: 220px;
 }
 
 .trama {
-    margin-top: 60px;
+    margin-top: 50px;
     clear: both;
+}
+
+textarea {
+    width: 680px;
 }
 
 #commenti{

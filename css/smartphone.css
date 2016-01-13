@@ -152,7 +152,7 @@ header {
 }
 
 .col-xs-12{
-    width: 99.8%;
+    width: 99.6%;
     margin-left: 0%;
 }
 
@@ -250,17 +250,15 @@ header {
 .poster {
     width: 200px;
     height: auto;
-    float: left;
-}
-
-.info {
-    margin-top: 60px;
-    margin-left: 220px;
 }
 
 .trama {
-    margin-top: 60px;
+    margin-top: 20px;
     clear: both;
+}
+
+textarea {
+    width: 99%;
 }
 
 #commenti{
@@ -297,6 +295,7 @@ footer {
 
 small {
     margin-top: 7px;
+    font-size: 70%;
 }
 
 #copyright {
