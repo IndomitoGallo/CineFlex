@@ -140,9 +140,9 @@ header {
 
 /******************************* body *********************************/
 
-#container {
+/*#container {
     float: left;
-}
+}*/
 
 .col-md-3, .col-md-9 {
     float: left;
@@ -157,12 +157,12 @@ header {
 
 .col-md-3 {
     width: 24%;
-    margin-left: -99.5%;
+    margin-left: -99.9%;
 }
 
 .col-md-9 {
     width: 74%;
-    margin-left: 25.5%;
+    margin-left: 25.7%;
 }
 
 .col-md-3 h1, .col-md-9 h1 {

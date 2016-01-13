@@ -151,9 +151,14 @@ header {
     background-position: center;
 }
 
-.col-sm-3, .col-sm-9 {
-    width: 99%;
-    margin-left: 0.4%;
+.col-md-3 {
+    width: 24%;
+    margin-left: -99.9%;
+}
+
+.col-md-9 {
+    width: 74%;
+    margin-left: 25.7%;
 }
 
 .col-sm-3 h1, .col-sm-9 h1 {

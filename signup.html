@@ -15,6 +15,7 @@
     <!--Script-->
 	<script type="text/javascript" language="Javascript" src="js/menubar.js"></script>
 	<script type="text/javascript" language="Javascript" src="js/signup.js"></script>
+	<script type="text/javascript" language="Javascript" src="js/login.js"></script>
     
 </head>
 
@@ -46,12 +47,13 @@
 			<ul id="login_reg">
 				<li><a class="selected" href="signup.html"><img src="img/signup.png">SignUp</a></li>
                 <li id="login" onmouseover="mostraLogin('login_form')" onmouseout="mostraLogin('login_form')">
-                    <a href=""><img src="img/login.png">Login</a>
+                    <a><img src="img/login.png">Login</a>
                     <form id="login_form">
                         <label for="user">Username:</label>
                         <input id="user" name="user" type="text" required><br>
                         <label for="pwd">Password:</label>
                         <input id="pwd" name="pwd" type="password" required><br>
+						<div id="ERROR2"></div>
                         <input type="submit" id="submit" name="submit" onclick="login(event)" value="Login">
                     </form>
                 </li>
