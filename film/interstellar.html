@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>CineFlex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Icona del Sito-->
+	<link href='../img/icona_film.ico' rel='icon' type='image/x-icon'/>
+	<!--Stili-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen and (min-width:992px)">
+	<link rel="stylesheet" type="text/css" href="../css/smartphone.css" media="screen and (max-width:767px)">
+	<link rel="stylesheet" type="text/css" href="../css/tablet.css" media="screen and (min-width:768px) and (max-width:991px)">
+    
+    <!--Script-->
+	<script type="text/javascript" language="Javascript" src="../js/menubarFilm.js"></script>
+    <script type="text/javascript" language="Javascript" src="../js/commento.js"></script>
+	<script type="text/javascript" language="Javascript" src="../js/loginFilm.js"></script>
+	<script type="text/javascript" language="Javascript" src="../js/caricaCommenti.js"></script>
+	<script type="text/javascript" language="Javascript" src="../js/asideFilm.js"></script>
+    
+</head>
+
+<body onload="caricaCommenti('Interstellar'); caricaAside()">
+
+    <header>
+        <nav class="menubar">
+            <a id="logo" href="../index.html">CineFlex</a>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li onmouseover="mostraMenu('submenu')" onmouseout="mostraMenu('submenu')">
+                    <a class="selected" href="../films.php">Film<img id="arrow" src="../img/arrow-right.png"></a>					
+                    <ul id="submenu">
+                        <li><a href="../films.php?genere=anim">Animazione</a></li>
+                        <li><a href="../films.php?genere=advn">Avventura</a></li>
+                        <li><a href="../films.php?genere=cmdy">Commedia</a></li>
+                        <li><a href="../films.php?genere=dram">Drammatico</a></li>
+                        <li><a href="../films.php?genere=fnts">Fantascienza</a></li>
+                        <li><a href="../films.php?genere=fnty">Fantasy</a></li>
+                        <li><a href="../films.php?genere=war">Guerra</a></li>
+                        <li><a href="../films.php?genere=hror">Horror</a></li>
+                        <li><a href="../films.php?genere=thrl">Thriller</a></li>
+                        <li><a href="../films.php?genere=wstr">Western</a></li>                        
+                    </ul>
+                </li>
+				<li><a href="../about.html">About</a></li>
+				<li><a href="../contact_us.html">Contattaci</a></li>
+			</ul>
+			<ul id="login_reg">
+				<li><a href="../signup.html" id="signup"><img src="../img/signup.png">SignUp</a></li>
+                <li id="login" onmouseover="mostraLogin('login_form')" onmouseout="mostraLogin('login_form')">
+                    <a><img src="../img/login.png">Login</a>
+                    <form id="login_form">
+                        <label for="user">Username:</label>
+                        <input id="user" name="user" type="text" required><br>
+                        <label for="pwd">Password:</label>
+                        <input id="pwd" name="pwd" type="password" required><br>
+						<div id="ERROR2"></div>
+                        <input type="submit" id="submit" name="submit" onclick="login(event)" value="Login">
+                    </form>
+                </li>
+			</ul>
+        </nav>
+    </header>
+    
+    <div id="container">      
+        <section class="col-md-9 col-sm-9 col-xs-12">
+            <p><img src="../img/poster/poster-interstellar.jpg" class="poster"></p>
+            <p class="info">                
+                <b>Titolo:</b> Interstellar<br><br>
+                <b>Anno:</b> 2014<br><br>
+                <b>Regia:</b> Christopher Nolan.<br><br>
+                <b>Interpreti:</b> Matthew McConaughey, Anne Hathaway, Jessica Chastain, Michael Caine, John Lithgow,
+                Mackenzie Foy, Ellen Burstyn, Casey Affleck, Matt Damon, Topher Grace, Wes Bentley, David Gyasi,
+                Timothée Chalamet, William Devane, Jeff Hephner, Elyes Gabel, David Oyelowo.<br><br>
+                <b>Durata:</b> 169 min
+            </p>
+            <p class="trama">
+                <b>Trama:</b><br>
+                Una piaga sta uccidendo i raccolti della Terra, da diversi decenni l'umanità è in crisi da cibo e quasi
+                tutti sono diventati agricoltori per supplire a queste esigenze. La scienza è ormai dimenticata e anche
+                ai bambini viene insegnato che l'uomo non è mai andato sulla Luna, si trattava solo di propaganda. L'ex
+                astronauta Cooper, mai andato nello spazio e costretto a diventare agricoltore, scopre grazie all'intuito
+                della figlia che la NASA è ancora attiva in gran segreto, che il pianeta Terra non si salverà, che è comparso
+                un warmhole vicino Saturno in grado di condurli in altre galassie e che qualcuno deve andare lì a cercare
+                l'esito di tre diverse missioni partite anni fa. Forse una di quelle tre ha scoperto un pianeta buono per
+                trasferire la razza umana e in quel caso è già pronto un piano di evacuazione. Andare e tornare è l'unica
+                maniera che Cooper ha di dare un futuro ai propri figli.
+                Questa volta c'è 2001: Odissea nello spazio nel mirino di Christopher Nolan. Interstellar non fa mistero di
+                volersi misurare in quel campo da gioco e lo dice più volte con le immagini in quelle che sarebbe riduttivo
+                chiamare citazioni ma sembrano più dichiarazioni d'intenti, come se il film di Kubrick fosse un genere a sè
+                e Interstellar ne stesse solo rispettando le regole. La differenza tra i due sta però nel fatto che il regista
+                di Inception e Memento è il massimo esempio di cineasta-ingegnere, un abile costruttore di ingranaggi dalla
+                complessità impressionante che con invidiabile chiarezza corrono verso una risposta finale. Le domande poste
+                dai suoi film non rimangono quasi mai appese (la trottola di Inception è una delle poche eccezioni in un film
+                che comunque è pieno di risposte) e anche Interstellar, arrivato là dove Kubrick si fermava, avanza per fornire
+                delle risposte che inevitabilmente risultano più povere di un indeterminato mistero. Per Nolan i misteri non
+                sono nella fine del viaggio ma nelle situazioni che l'hanno messo in moto, sono da rintracciarsi nei molti
+                errori e nelle molte menzogne dei personaggi (quasi tutti sbagliano qualcosa, quasi tutti ad un certo punto
+                mentono a se stessi o agli altri) e nelle intuizioni sentimentali che hanno, tutto comunque parte di un puzzle
+                perfetto.
+                Quel che ogni volta questo autore ci fa riscoprire è il piacere dell'audacia. Non c'è nessuno oggi capace di
+                osare così tanto, nessuno così determinato a non voler essere come gli altri. Il futuro messo in scena da
+                Interstellar non somiglia a nessuno dei molti già visti, è uno in cui una società di diverse decine di anni
+                avanti a noi vive in un passato recentissimo (sembra la fine degli anni '90), apparentemente idilliaco ma
+                intimamente disperato. L'uomo ha smesso di osare e, essendo a rischio estinzione, ha cominciato a conservare
+                ma in questo ritorno alla vita bucolica, tutta cieli blu e campi coltivati, è collegato un profondo senso di
+                sconfitta, tanto quanto uno di esaltazione è invece legato alle potenzialità della scienza e della tecnologia
+                (mai nemica ma quasi più amica ed empatica dei propri simili), un assunto che già da solo ribalta i luoghi
+                comuni del cinema per ambire ad un senso di meraviglia ed avventura che non siano figli solo dell'eroismo
+                individuale del cinema americano (che comunque non manca) ma della semplicità spielberghiana, quella capacità
+                invidiabile di suscitare i sentimenti più basilari quali meraviglia, desiderio e stupore.
+                In maniera non diversa è audace la tecnica con cui il regista, già da Inception, mostra di avere un'idea
+                propria dell'uso narrativo del montaggio parallelo, lavorando sulla suspense tra due linee di trama nello
+                stesso momento (quella dell'astronauta Cooper e della figlia Murph o in certi casi quelle degli eventi che
+                stanno accadendo contemporaneamente ai diversi astronauti) o come intenda il tempo. In quasi ogni suo film
+                Nolan ha dimostrato che il cinema può raccontare storie intrecciandone la trama a partire dalla sovrapposizione
+                di temporalità diverse, trovando così percorsi nuovi anche per parabole canoniche. In Interstellar il tempo
+                degli astronauti non è quello sulla Terra, i loro eventi si svolgono in momenti differenti ma lo stesso
+                comunicano di continuo e in maniere sempre nuove, rinfrescando espedienti di suspense ormai usurati. È parte
+                del fascino da puzzle dei film di Nolan ma più in grande è anche la dimostrazione di una vivacità narrativa
+                e un'originalità registica fortissime che impongono un passo diverso ai suoi film e costringono lo spettatore
+                al piacere della concentrazione. I tempi del film seguono un ritmo tutto proprio, con uno stacco vengono
+                saltati diversi mesi, piazzando ellissi là dove altri avrebbero indugiato (gli astronauti non si preparano?
+                Cosa succede tra l'accettazione della missione e la partenza?) e in altri casi vengono allungati a dismisura
+                momenti su cui altri avrebbero sorvolato.
+                Che tutto questo accada in un kolossal hollywoodiano è forse la sorpresa più grande che il pavido cinema
+                di questi anni, contento solo delle proprie sicurezze, poteva regalarci.
+            </p>
+            <p><b>Commenti:</b></p>
+            <div id="commenti"></div>
+            <div id="nuovo_comm">
+                <b>Nuovo commento (max 500 caratteri):</b>
+                <div id="msg"></div>
+                <form id="form_comm">
+                    <textarea onclick="mostraMsg()" id="nota" name="nota" rows="4" maxlength="500" placeholder="Scrivi ..."  readonly></textarea><br>
+                    <button onclick="mostraMsg()" type="button">Invia</button>
+                </form>
+            </div>
+        </section>
+		<aside id="aside" class="col-md-3 col-sm-3 col-xs-12"></aside>  
+    </div>
+    
+    <footer>
+        <small id="copyright">Copyright © 2016 cineflex.it - All Rights Reserved.</small>
+        <small id="webmaster">Webmaster: Luca Talocci & Lorenzo Bernabei</small>
+    </footer>
+
+</body>
+</html>

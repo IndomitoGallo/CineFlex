@@ -16,10 +16,11 @@
 	<script type="text/javascript" language="Javascript" src="js/menubar.js"></script>
     <script type="text/javascript" language="Javascript" src="js/listafilm.js"></script>
 	<script type="text/javascript" language="Javascript" src="js/login.js"></script>
+	<script type="text/javascript" language="Javascript" src="js/aside.js"></script>
 		
 </head>
 
-<body>
+<body onload="caricaAside()">
 	
     <header>
         <nav class="menubar">
@@ -87,8 +88,8 @@
 				<li onclick="mostraFilm('fnts')">
 					<a>Fantascienza<img id="arrowfnts" src="img/arrow-right.png"></a>
 					<ul id="fnts" class="genere">
-						<li><a href="film/alien.php">Alien</a></li>
-						<li><a href="film/interstellar.php">Interstellar</a></li>
+						<li><a href="film/alien.html">Alien</a></li>
+						<li><a href="film/interstellar.html">Interstellar</a></li>
 					</ul>
 				</li>
                 <li onclick="mostraFilm('fnty')">
@@ -104,8 +105,8 @@
                 <li onclick="mostraFilm('hror')">
 					<a>Horror<img id="arrowhror" src="img/arrow-right.png"></a>
 					<ul id="hror" class="genere">
-						<li><a href="film/black_sheep.php">Black Sheep</a></li>
-						<li><a href="film/wrong_turn.php">Wrong Turn</a></li>
+						<li><a href="film/black_sheep.html">Black Sheep</a></li>
+						<li><a href="film/wrong_turn.html">Wrong Turn</a></li>
 					</ul>				
 				</li>
                 <li onclick="mostraFilm('thrl')">
@@ -120,14 +121,7 @@
 				</li>
 			</ul>       
         </section>
-		<aside class="col-md-3 col-sm-3 col-xs-12">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique,
-                dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia,
-                repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi
-                veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem.
-            </p>
-        </aside> 
+		<aside id="aside" class="col-md-3 col-sm-3 col-xs-12"></aside> 
     </div>
     
     <footer>
