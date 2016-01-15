@@ -278,12 +278,22 @@ textarea {
 
 #commenti{
     height: 250px;
-    overflow: hidden;
+    overflow: scroll;
     border: 1px solid black;
     margin: 0px 15px;
     margin-bottom: 15px;
     border-radius: 5px;
     background-color: #F5F5F5;
+}
+
+.nota {
+    margin-left: 20px;
+    margin-right: 25px;
+}
+
+hr {
+    margin: 0 20px;
+    color: #F5F5F5;
 }
 
 #nuovo_comm {

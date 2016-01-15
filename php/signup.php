@@ -1,9 +1,12 @@
 <?php
+
+    error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_WARNING); //mostra tutto tranne avvisi e avvertimenti
     
     //CONNESSIONE AL DATABASE
     $servername = "localhost";
     $username = "root";
     $password = "";
+    /*$password = "aeg20e";*/
     $dbname = "dbpw";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     
@@ -19,29 +22,29 @@
     $mail = $_GET['mail'];
     $user = $_GET['utente'];
     
-    $sql1 = "SELECT * FROM utenti WHERE username='{$user}'";
+    $sql1 = "SELECT * FROM utente WHERE username='{$user}'";
 
-    $result1 = mysqli_query($conn, $sql);
+    $result1 = mysqli_query($conn, $sql1);
+        
+    $sql2 = "SELECT * FROM utente WHERE email='{$mail}'";
     
-    $sql2 = "SELECT * FROM utenti WHERE email='{$mail}'";
-
-    $result2 = mysqli_query($conn, $sql);
-    
+    $result2 = mysqli_query($conn, $sql2);
+        
     if(mysqli_num_rows($result1) > 0) {
-        
+                
         echo "USER_ERROR"; //nel js lanceremo un messaggio: username già esistente
-        
-    } else if(mysqli_num_rows($result2) > 0) {
-        
+                
+    } elseif(mysqli_num_rows($result2) > 0) {
+                
         echo "MAIL_ERROR"; //nel js lanceremo un messaggio: esiste già un account associato a questa mail
-        
+                
     } else {
         $name = $_GET['name'];
         $surname = $_GET['surname'];
         $pwd = $_GET['pswd'];
-        
-        $sql = "INSERT INTO utenti VALUES('{$user}','{$name}', '{$surname}', '{$pwd}', '{$mail}')";
-        
+                
+        $sql = "INSERT INTO utente VALUES('{$user}','{$name}', '{$surname}', '{$pwd}', '{$mail}')";
+                
         //Eseguo la query
         if(!mysqli_query($conn, $sql)){
             /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
@@ -52,7 +55,10 @@
             echo "OK";
         }        
     }
-    
+
+    //Rilascio le risorse
+    mysqli_free_result($result1);
+    mysqli_free_result($result2);
     //Chiudo la connessione
     mysqli_close($conn);
     

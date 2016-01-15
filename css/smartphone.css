@@ -263,12 +263,22 @@ textarea {
 
 #commenti{
     height: 250px;
-    overflow: hidden;
+    overflow: scroll;
     border: 1px solid black;
     margin: 0px 15px;
     margin-bottom: 15px;
     border-radius: 5px;
     background-color: #F5F5F5;
+}
+
+.nota {
+    margin-left: 15px;
+    margin-right: 20px;
+}
+
+hr {
+    margin: 0 20px;
+    color: #F5F5F5;
 }
 
 #nuovo_comm {
@@ -285,7 +295,7 @@ textarea {
 
 footer {
     background-color: #111;
-    height: 30px;
+    height: 45px;
     border: 1px solid;
     border-radius: 6px;
     color: #FFF;
@@ -304,6 +314,7 @@ small {
 }
 
 #webmaster {
-    float: right;
-    margin-right: 25px;
+    float: left;
+    margin-top: 25px;
+    margin-left: -241px;
 }

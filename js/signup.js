@@ -6,6 +6,7 @@ function registra(e) {
         xmlhttp.onreadystatechange = function() {
             var div;
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                console.log(xmlhttp.responseText);
                 if(xmlhttp.responseText == "OK") {
                     div = document.getElementById('OK');
                     div.innerHTML = '<h1>Registrazione</h1><p>Registrazione avvenuta con successo.<br>Ora puoi fare login.</p>';
@@ -49,7 +50,7 @@ function registra(e) {
         
         var params = "name=" + name + "&surname=" + surname + "&mail=" + mail + "&utente=" + utente + "&pswd=" + pswd;
         
-        xmlhttp.open("GET", "php/signup_prova.php?" + params, true);
+        xmlhttp.open("GET", "php/signup.php?" + params, true);
         xmlhttp.send();
         
         /*elimina l'azione di default associata all'input type="submit" di ricaricare tutta la pagina*/

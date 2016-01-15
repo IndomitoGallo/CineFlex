@@ -63,48 +63,87 @@
     
     <div id="container">      
         <section class="col-md-9 col-sm-9 col-xs-12">
-            <p><img src="../img/poster/poster-alien.jpg" class="poster"></p>
+            <p><img src="../img/poster/poster-wrongturn.jpg" class="poster"></p>
             <p class="info">                
-                <b>Titolo:</b> Alien<br><br>
-                <b>Anno:</b> 1979<br><br>
-                <b>Regia:</b> Ridley Scott.<br><br>
-                <b>Interpreti:</b> Sigourney Weaver, Yaphet Kotto, Veronica Cartwright, Ian Holm,
-                Tom Skerritt, Harry Dean Stanton, John Hurt.<br><br>
-                <b>Durata:</b> 117 min
+                <b>Titolo:</b> Wrong Turn<br><br>
+                <b>Anno:</b> 2003<br><br>
+                <b>Regia:</b> Rob Schmidt.<br><br>
+                <b>Interpreti:</b> Eliza Dushku, Desmond Harrington, Emmanuelle Chriqui, Jeremy Sisto, Kevin Zegers, 
+                Lindy Booth, Julian Richings, Gary Robbins, Tyler Garling, Wayne Robson, Yvonne Gaudry, Joel Harris.<br><br>
+                <b>Durata:</b> 84 min
             </p>
             <p class="trama">
                 <b>Trama:</b><br>
-                L'astronave Nostromo sbarca su un pianeta da cui proviene un SOS, ma la colonia sembra
-                essere disabitata. Nel corso di una ricognizione, un membro dell'equipaggio viene attaccato
-                da un essere a forma di ragno. La situazione precipita: i coloni sono stati in realtà
-                sterminati da una razza aliena che ha trasformato la base in una gigantesca covata.
-                L'idea della specie aliena che usa il corpo degli esseri umani come ospite per la
-                proliferazione parassitaria non era nuova già nel 1979 - basti pensare a L'invasione degli
-                Ultracorpi di Siegel. Eppure l'alieno, concepito dalla follia visionaria di H.R. Giger
-                e realizzato da Carlo Rambaldi, è divenuto nel corso degli anni una vera e propria icona,
-                cinematografica e non solo. Esempio sublime di bellezza e malvagità, può essere visto come
-                una versione estrema di "dark lady" - e non a caso, forse, è femmina, nera e sfuggente.
-                Una specie totalmente priva di qualsiasi moralità, che ha come unico scopo la sopravvivenza
-                e la riproduzione, è una trovata geniale nella sua semplicità: gli alieni hanno la stessa
-                psicologia delle mosche, ma in più sono estremamente letali. 
-                Lo stesso titolo, Alien, sembra riferirsi tanto all'essere alieno quanto all'ambiente entro
-                cui si svolge la storia: le creature divengono padrone di tutto ciò che serve al loro
-                scopo, tanto dei corpi usati come materia prima organica quanto della base spaziale,
-                nonostante questa sia opera degli uomini. L'angoscia generata dal film sta proprio nel
-                disperato girovagare dell'equipaggio tra i claustrofobici labirinti della colonia, in
-                cerca di un'impossibile salvezza. Sale progressivamente, nei personaggi e nel pubblico,
-                la consapevolezza che gli alieni braccano gli umani come il gatto fa col topo. Un gioco
-                crudele che al topo riserva solo due finali: la fuga, o la morte. 
-                La più inquietante meditazione sul ruolo della specie umana nel cosmo che il cinema abbia
-                mai offerto.    
+                Un gruppo di giovani rimane intrappolato in una spettrale foresta del West Virginia. Ben presto,
+                i ragazzi scopriranno, di essere diventati preda di leggendari cannibali dal volto sfigurato.
+                Quelli di voi che avranno letto solo la trama o a malapena visto il trailer, di questo horror
+                estivo, penseranno che Wrong Turn sia un filmetto come tanti altri. Al contrario, questa pellicola
+                sorprende per la sua tecnica e per il suo stile.
+                Abilmente diretto e particolarmente accurato nei torbidi dettagli scenografici, il film di Rob Schmidt
+                vanta anche un buon cast, in cui spicca la bella e brava Eliza Dushku.
             </p>
             <p><b>Commenti:</b></p>
-            <div id="commenti"></div>
+            <div id="commenti">
+				<?php
+				 
+					//CONNESSIONE AL DATABASE
+					$servername = "localhost";
+					$username = "root";
+					$password = "";
+					/*$password = "aeg20e";*/
+					$dbname = "dbpw";
+					$conn = mysqli_connect($servername, $username, $password, $dbname);
+					
+					//La seguente funzione forza la trasmissione dei dati con la codifica utf8
+					mysqli_set_charset($conn, "utf8");
+					
+					//controllo sulla connessione
+					if(!$conn) {
+						/*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
+						dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
+						error_log(date("Y-m-d H:i:s") . " - DB connection failed: " . mysqli_connect_error() . "\n", 3, "../php/error.log");
+						die();
+					}
+					
+					$sql = "SELECT username, nota, data FROM commento WHERE film='Wrong Turn' ORDER BY data DESC";
+				
+					$result = mysqli_query($conn, $sql);
+					
+					if(!$result) {
+						/*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
+						dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
+						error_log(date("Y-m-d H:i:s") . " - DB query failed on: " . $sql . "\nMessagge: " . mysqli_error($conn) . "\n", 3, "../php/error.log");
+						echo "<p>Errore nel caricamento dei commenti.</p>"; 
+					}
+					else {
+						$num = mysqli_num_rows($result);
+						$count = 0;
+						if($num > 0) {
+							while($row = mysqli_fetch_array($result)) {
+								echo "<p><strong>" . $row[0] . "</strong> - " . $row[2] . "</p>";
+								echo "<p class=\"nota\">" . $row[1] . "</p>";
+								$count++;
+								if($count < $num)
+									echo "<hr>"; //non viene inserita la barra per l'ultimo commento
+							}
+						}
+						else {
+							echo "<p>Nessun commento presente</p>";
+						}
+					}
+					
+					//Rilascio la risorsa
+					mysqli_free_result($result);
+					//Chiudo la connessione
+					mysqli_close($conn);
+				
+				?>
+			</div>
             <div id="nuovo_comm">
-                <b>Nuovo commento (max 255 caratteri):</b>
+                <b>Nuovo commento (max 500 caratteri):</b>
                 <div id="msg"></div>
                 <form id="form_comm">
-                    <textarea onclick="mostraMsg()" id="nota" name="nota" rows="4" maxlength="255" placeholder="Scrivi ..."  readonly></textarea><br>
+                    <textarea onclick="mostraMsg()" id="nota" name="nota" rows="4" maxlength="500" placeholder="Scrivi ..."  readonly></textarea><br>
                     <button onclick="mostraMsg()" type="button">Invia</button>
                 </form>
             </div>

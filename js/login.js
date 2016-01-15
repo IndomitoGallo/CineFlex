@@ -61,7 +61,7 @@ function login(e) {
         
         var params = "user=" + user + "&pwd=" + pwd;
         
-        xmlhttp.open("GET", "php/login_prova.php?" + params, true);
+        xmlhttp.open("GET", "php/login.php?" + params, true);
         xmlhttp.send();
         
         /*elimina l'azione di default associata all'input type="submit" di ricaricare tutta la pagina*/

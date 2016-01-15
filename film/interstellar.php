@@ -126,12 +126,67 @@
                 di questi anni, contento solo delle proprie sicurezze, poteva regalarci.
             </p>
             <p><b>Commenti:</b></p>
-            <div id="commenti"></div>
+            <div id="commenti">
+				<?php
+				 
+					//CONNESSIONE AL DATABASE
+					$servername = "localhost";
+					$username = "root";
+					$password = "";
+					/*$password = "aeg20e";*/
+					$dbname = "dbpw";
+					$conn = mysqli_connect($servername, $username, $password, $dbname);
+					
+					//La seguente funzione forza la trasmissione dei dati con la codifica utf8
+					mysqli_set_charset($conn, "utf8");
+					
+					//controllo sulla connessione
+					if(!$conn) {
+						/*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
+						dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
+						error_log(date("Y-m-d H:i:s") . " - DB connection failed: " . mysqli_connect_error() . "\n", 3, "../php/error.log");
+						die();
+					}
+					
+					$sql = "SELECT username, nota, data FROM commento WHERE film='Interstellar' ORDER BY data DESC";
+				
+					$result = mysqli_query($conn, $sql);
+					
+					if(!$result) {
+						/*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
+						dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
+						error_log(date("Y-m-d H:i:s") . " - DB query failed on: " . $sql . "\nMessagge: " . mysqli_error($conn) . "\n", 3, "../php/error.log");
+						echo "<p>Errore nel caricamento dei commenti.</p>"; 
+					}
+					else {
+						$num = mysqli_num_rows($result);
+						$count = 0;
+						if($num > 0) {
+							while($row = mysqli_fetch_array($result)) {
+								echo "<p><strong>" . $row[0] . "</strong> - " . $row[2] . "</p>";
+								echo "<p class=\"nota\">" . $row[1] . "</p>";
+								$count++;
+								if($count < $num)
+									echo "<hr>"; //non viene inserita la barra per l'ultimo commento
+							}
+						}
+						else {
+							echo "<p>Nessun commento presente</p>";
+						}
+					}
+					
+					//Rilascio la risorsa
+					mysqli_free_result($result);
+					//Chiudo la connessione
+					mysqli_close($conn);
+				
+				?>
+			</div>
             <div id="nuovo_comm">
-                <b>Nuovo commento (max 255 caratteri):</b>
+                <b>Nuovo commento (max 500 caratteri):</b>
                 <div id="msg"></div>
                 <form id="form_comm">
-                    <textarea onclick="mostraMsg()" id="nota" name="nota" rows="4" maxlength="255" placeholder="Scrivi ..."  readonly></textarea><br>
+                    <textarea onclick="mostraMsg()" id="nota" name="nota" rows="4" maxlength="500" placeholder="Scrivi ..."  readonly></textarea><br>
                     <button onclick="mostraMsg()" type="button">Invia</button>
                 </form>
             </div>
