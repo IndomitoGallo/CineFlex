@@ -291,6 +291,11 @@ textarea {
     margin-right: 25px;
 }
 
+.notaAside {
+    margin-left: 20px;
+    margin-right: 25px;
+}
+
 hr {
     margin: 0 20px;
     color: #F5F5F5;

@@ -1,4 +1,6 @@
 <?php
+
+	error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_WARNING); //mostra tutto tranne avvisi e avvertimenti
     
     //CONNESSIONE AL DATABASE
     $servername = "localhost";
@@ -24,25 +26,17 @@
 
     $result = mysqli_query($conn, $sql);
     
-    if(!$result) {
-        /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
-        dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
-        error_log(date("Y-m-d H:i:s") . " - DB query failed on: " . $sql . "\nMessagge: " . mysqli_error($conn) . "\n", 3, "./error.log");
-        echo "DB_ERROR"; //nel js lanceremo un messaggio: non è stato possibile effettuare la registrazione
-    }
-    else {
-        if(mysqli_num_rows($result) == 0) {
-            echo "USER_ERROR"; //nel js lanceremo un messaggio: username errato
-        } else {
-            $row = mysqli_fetch_array($result);
-            if($row[0] != $pwd) {
-                echo "PWD_ERROR"; //nel js lanceremo un messaggio: password errata
-            }
-            else {
-                echo "OK";
-                session_start();
-                $_SESSION['user'] = $user;
-            }
+    if(mysqli_num_rows($result) == 0) {
+        echo "USER_ERROR"; //nel js lanceremo un messaggio: username errato
+    } else {
+        $row = mysqli_fetch_array($result);
+        if($row[0] != $pwd) {
+            echo "PWD_ERROR"; //nel js lanceremo un messaggio: password errata
+        }
+        else {
+            echo "OK";
+            session_start();
+             $_SESSION['user'] = $user;
         }
     }
     
