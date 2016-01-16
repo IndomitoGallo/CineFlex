@@ -19,7 +19,7 @@
 		die();
 	}
     
-	$sql = "SELECT username, nota, data, film FROM commento ORDER BY data DESC";
+	$sql = "SELECT username, nota, data, film FROM commento ORDER BY data DESC LIMIT 5"; //vengono mostrati solo gli ultimi 5 commenti inseriti
 				
 	$result = mysqli_query($conn, $sql);
 					
@@ -31,8 +31,6 @@
             $commenti .= "<p><strong>" . $row[0] . "</strong><br>about " . $row[3] . "<br>" . $row[2] . "</p>";
             $commenti .= "<p class=\"notaAside\">" . $row[1] . "</p>";
             $count++;
-			if($count == 5) //vengono mostrati solo gli ultimi 5 commenti inseriti
-				break;
             if($count < $num)
                 $commenti .= "<hr>"; //non viene inserita la barra per l'ultimo commento
         }
