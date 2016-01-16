@@ -6,18 +6,18 @@ function login(e) {
         xmlhttp.onreadystatechange = function() {
             var div;
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                if(xmlhttp.responseText == "OK") {
-                    div = document.getElementById('signup'); /* modifico #signup */
+                /*if(xmlhttp.responseText == "OK") {
+                    div = document.getElementById('signup');  //modifico #signup
                     div.removeAttribute('href');
                     div.innerHTML = 'Ciao, NOME-UTENTE!';
                     div.style.cursor = 'pointer';
-                    div = document.getElementById('login'); /* modifico #login */
+                    div = document.getElementById('login');   //modifico #login 
                     div.innerHTML = '<a><img src="../img/logout.png">Logout</a>';
                     div.removeAttribute('onmouseover');
                     div.removeAttribute('onmouseout');
                     div.setAttribute("onclick", "logout(event)");
                 }
-                else if(xmlhttp.responseText == "USER_ERROR") {
+                else */if(xmlhttp.responseText == "USER_ERROR") {
                     div = document.getElementById('ERROR2');
                     div.innerHTML = 'Username errato!';
                     div.style.color = "red";
@@ -44,7 +44,8 @@ function login(e) {
                     div.style.textTransform = "none";
                     div.style.fontWeight = "normal";
                 }
-                else { /*errore generico in caso dal php venga passata una stringa non riconosciuta*/
+                /*errore generico in caso dal php venga passata una stringa non riconosciuta*/
+                /*else {
                     div = document.getElementById('ERROR2');
                     div.innerHTML = 'Errore.';
                     div.style.color = "red";
@@ -52,6 +53,17 @@ function login(e) {
                     div.style.padding = "10px 5px 0px 5px";
                     div.style.textTransform = "none";
                     div.style.fontWeight = "normal";
+                }*/
+                else {
+                    div = document.getElementById('signup'); /* modifico #signup */
+                    div.removeAttribute('href');
+                    div.innerHTML = 'Ciao, ' + xmlhttp.responseText;
+                    div.style.cursor = 'pointer';
+                    div = document.getElementById('login'); /* modifico #login */
+                    div.innerHTML = '<a><img src="../img/logout.png">Logout</a>';
+                    div.removeAttribute('onmouseover');
+                    div.removeAttribute('onmouseout');
+                    div.setAttribute("onclick", "logout(event)");
                 }
             }
         };
@@ -61,7 +73,7 @@ function login(e) {
         
         var params = "user=" + user + "&pwd=" + pwd;
         
-        xmlhttp.open("GET", "../php/login_prova.php?" + params, true);
+        xmlhttp.open("GET", "../php/login.php?" + params, true);
         xmlhttp.send();
         
         /*elimina l'azione di default associata all'input type="submit" di ricaricare tutta la pagina*/

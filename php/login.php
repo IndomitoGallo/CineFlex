@@ -34,7 +34,7 @@
             echo "PWD_ERROR"; //nel js lanceremo un messaggio: password errata
         }
         else {
-            echo "OK";
+            echo $user;
             session_start();
              $_SESSION['user'] = $user;
         }
