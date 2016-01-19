@@ -18,10 +18,12 @@
 	<script type="text/javascript" language="Javascript" src="../js/loginFilm.js"></script>
 	<script type="text/javascript" language="Javascript" src="../js/caricaCommenti.js"></script>
 	<script type="text/javascript" language="Javascript" src="../js/asideFilm.js"></script>
+	<script type="text/javascript" language="Javascript" src="../js/logoutFilm.js"></script>
+	<script type="text/javascript" language="Javascript" src="../js/sessionFilm.js"></script>
     
 </head>
 
-<body onload="caricaCommenti('Interstellar'); caricaAside()">
+<body onload="caricaCommenti('Interstellar'); caricaAside(); session('Interstellar')">
 
     <header>
         <nav class="menubar">
@@ -56,7 +58,7 @@
                         <label for="pwd">Password:</label>
                         <input id="pwd" name="pwd" type="password" required><br>
 						<div id="ERROR2"></div>
-                        <input type="submit" id="submit" name="submit" onclick="login(event)" value="Login">
+                        <input type="submit" id="submit" name="submit" onclick="login(event, 'Interstellar')" value="Login">
                     </form>
                 </li>
 			</ul>
@@ -132,7 +134,7 @@
             <div id="nuovo_comm">
                 <b>Nuovo commento (max 500 caratteri):</b>
                 <div id="msg"></div>
-                <form id="form_comm">
+                <form id="form_comm" method="POST">
                     <textarea onclick="mostraMsg()" id="nota" name="nota" rows="4" maxlength="500" placeholder="Scrivi ..."  readonly></textarea><br>
                     <button onclick="mostraMsg()" type="button">Invia</button>
                 </form>

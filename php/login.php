@@ -36,7 +36,7 @@
         else {
             echo $user;
             session_start();
-             $_SESSION['user'] = $user;
+            $_SESSION['user'] = $user;
         }
     }
     
