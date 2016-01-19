@@ -138,6 +138,10 @@ header {
     color: #FFF;
 }
 
+#responsive_button {
+    display: none;
+}
+
 /******************************* body *********************************/
 
 /*#container {

@@ -27,22 +27,32 @@ header {
     font-size: 160%;
     float: left;
     margin-left: 20px;
-    margin-top: 15px;
+    margin-top: -45px;
+}
+
+#responsive_button {
+    float: right;
+    margin-top: -45px;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 /* menubar */
+#menu {
+    visibility: hidden;
+}
+
 .menubar ul {
     list-style: none;
-    float: left;
-    margin-top: 10px;
-    margin-left: -20px;
+    margin-top: 60px;
+    margin-left: -46px;
 }
 .menubar ul li {
-    float: left;
     margin-left: 5px;
     position: relative;
 }
 .menubar ul li a {
+    background-color: #000;
     font-weight: bold;
     color: #FFF;
     display: block;
@@ -50,7 +60,6 @@ header {
     padding: 10px 5px 9px;
     text-transform: uppercase;
     border: 1px solid #111;
-    border-radius: 6px;
 }
 .menubar ul li:hover a {
     text-decoration: underline;
@@ -70,20 +79,21 @@ header {
     background-color: #F5F5F5;
     border: 1px solid #111;
     border-radius: 6px;
+    z-index: 1;
     position: absolute;
-    top: 29px;
-    left: 19px;
+    top: -30px;
+    left: 120px;
 }
 #submenu li {
     float: none;
     margin-left: -40px;
 }
 #submenu li a {
+    background-color: #F5F5F5;
     color: #111;
     padding: 5px 5px 4px;
     text-decoration: none;
     border: none;
-    border-radius: 0px;
 }
 #submenu li:hover a {
     text-decoration: underline;
@@ -91,11 +101,8 @@ header {
 
 /* menubar (login & signup) */
 #login_reg {
-    float: right;
-}
-
-#login {
-    margin-right: 20px;
+    visibility: hidden;
+    margin-top: -16px;
 }
 
 #login a {
@@ -114,8 +121,8 @@ header {
     border: 1px solid #111;
     border-radius: 6px;
     position: absolute;
-    top: 39px;
-    right: 0px;
+    top: 30px;
+    left: 80px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -146,6 +153,7 @@ header {
     border: 1px solid #111;
     border-radius: 6px;
     margin-bottom: 3px;
+    margin-top: 4px;
     background-image: url(../img/film.png);
     background-repeat: repeat;
     background-position: center;
