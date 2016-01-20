@@ -27,12 +27,12 @@ header {
     font-size: 160%;
     float: left;
     margin-left: 20px;
-    margin-top: -45px;
+    margin-top: 14px;
 }
 
 #responsive_button {
     float: right;
-    margin-top: -45px;
+    margin-top: 14px;
     margin-right: 20px;
     cursor: pointer;
 }
@@ -40,26 +40,32 @@ header {
 /* menubar */
 #menu {
     visibility: hidden;
+    width: 742px;
+    position: absolute;
+}
+
+.menubar {
+    position: relative;
 }
 
 .menubar ul {
     list-style: none;
     margin-top: 60px;
-    margin-left: -46px;
+    margin-left: -40px;
 }
 .menubar ul li {
     margin-left: 5px;
     position: relative;
 }
 .menubar ul li a {
-    background-color: #000;
+    background-color: #111;
     font-weight: bold;
     color: #FFF;
     display: block;
     text-decoration: none;
     padding: 10px 5px 9px;
     text-transform: uppercase;
-    border: 1px solid #111;
+    border: 1px solid #000;
 }
 .menubar ul li:hover a {
     text-decoration: underline;
@@ -102,7 +108,9 @@ header {
 /* menubar (login & signup) */
 #login_reg {
     visibility: hidden;
-    margin-top: -16px;
+    top: 156px;
+    width: 746px;
+    position: absolute;
 }
 
 #login a {
@@ -122,7 +130,7 @@ header {
     border-radius: 6px;
     position: absolute;
     top: 30px;
-    right: 510px;
+    left: 80px;
     text-transform: uppercase;
     font-weight: bold;
 }
