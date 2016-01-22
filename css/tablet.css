@@ -35,27 +35,18 @@ header {
     margin-top: 14px;
     margin-right: 20px;
     cursor: pointer;
+    width: 32px;
+    height: 32px;
 }
 
 /* menubar */
-#menu {
-    visibility: hidden;
-    width: 742px;
-    position: absolute;
-}
 
 .menubar {
     position: relative;
+    z-index: 1;
 }
-
 .menubar ul {
     list-style: none;
-    margin-top: 60px;
-    margin-left: -40px;
-}
-.menubar ul li {
-    margin-left: 5px;
-    position: relative;
 }
 .menubar ul li a {
     background-color: #111;
@@ -74,6 +65,15 @@ header {
     background-color: #333;
 }
 
+#menu {
+    visibility: hidden;
+    width: 100.3%;
+    position: absolute;
+    z-index: 5;
+    left: -41px;
+    top: 41px;
+}
+
 #arrow {
    width: 15px;
    height: 14px;
@@ -85,19 +85,20 @@ header {
     background-color: #F5F5F5;
     border: 1px solid #111;
     border-radius: 6px;
-    z-index: 1;
+    z-index: 10;
     position: absolute;
-    top: -30px;
-    left: 120px;
+    top: 66px;
+    left: 110px;
 }
 #submenu li {
     float: none;
-    margin-left: -40px;
+    margin-left: -35px;
+    margin-right: 5px;
 }
 #submenu li a {
     background-color: #F5F5F5;
     color: #111;
-    padding: 5px 5px 4px;
+    padding: 5px 0px 4px;
     text-decoration: none;
     border: none;
 }
@@ -106,11 +107,14 @@ header {
 }
 
 /* menubar (login & signup) */
+
 #login_reg {
     visibility: hidden;
-    top: 156px;
-    width: 746px;
+    width: 100.3%;
     position: absolute;
+    z-index: 1;
+    top: 197px;
+    left: -41px;
 }
 
 #login a {
@@ -129,8 +133,9 @@ header {
     border: 1px solid #111;
     border-radius: 6px;
     position: absolute;
-    top: 30px;
-    left: 80px;
+    z-index: 5;
+    top: 65px;
+    left: 127px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -203,6 +208,7 @@ header {
 
 .col-sm-3 textarea, .col-sm-9 textarea {
     margin: 5px 0px;
+    width: 518px;
 }
 
 .col-sm-3 [type="submit"], .col-sm-9 [type="submit"] {
@@ -282,10 +288,6 @@ header {
 .trama {
     margin-top: 40px;
     clear: both;
-}
-
-textarea {
-    width: 518px;
 }
 
 #commenti{

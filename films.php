@@ -27,7 +27,7 @@
     <header>
         <nav class="menubar">
 			<a id="logo" href="index.html">CineFlex</a>
-            <img id="responsive_button" onclick= "mostraMenu('menu'); mostraMenu('login_reg')" src="img/menu.ico">
+            <img id="responsive_button" onclick= "mostraMenu('menu'); mostraMenu('login_reg')" src="img/menu.png">
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li onmouseover="mostraMenu('submenu')" onmouseout="mostraMenu('submenu')">
