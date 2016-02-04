@@ -1,4 +1,6 @@
 <?php
+	
+	error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_WARNING); //mostra tutto tranne avvisi e avvertimenti
 				 
 	//CONNESSIONE AL DATABASE
 	$servername = "localhost";
@@ -16,10 +18,11 @@
 		/*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
 		dettagli tecnici di cosa è andato storto.*/
 		error_log(date("Y-m-d H:i:s") . " - DB connection failed: " . mysqli_connect_error() . "\n", 3, "./error.log");
-		die();
+		die("<p>Errore di connessione nel caricamento.</p>");
 	}
     
-	$sql = "SELECT username, nota, data, film FROM commento ORDER BY data DESC LIMIT 5"; //vengono mostrati solo gli ultimi 5 commenti inseriti
+	//vengono mostrati solo gli ultimi 5 commenti inseriti
+	$sql = "SELECT username, nota, data, film FROM commento ORDER BY data DESC LIMIT 5";
 				
 	$result = mysqli_query($conn, $sql);
 					

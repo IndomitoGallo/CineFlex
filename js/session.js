@@ -1,10 +1,10 @@
-function session() {
+function session() { //questa funzione verifica se l'utente è loggato o meno
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         var div;
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            if(xmlhttp.responseText != "NOT LOGGED") {
+            if(xmlhttp.responseText != "NOT LOGGED") { //utente LOGGATO!
                 div = document.getElementById('signup'); /* modifico #signup */
                 div.removeAttribute('href');
                 div.innerHTML = 'Ciao, ' + xmlhttp.responseText;

@@ -1,4 +1,4 @@
-function mostraMenu(menuCorrente) {	/*usato sia per il submenu dei film che per menu a tendina di tablet e smartphone*/
+function mostraMenu(menuCorrente) {	/*usato sia per il submenù dei film che per menù a tendina di tablet/smartphone*/
 	if (document.getElementById(menuCorrente)) {
 		stileMenu = document.getElementById(menuCorrente).style;
 		if (stileMenu.visibility== "visible") {
@@ -16,7 +16,7 @@ function mostraMenu(menuCorrente) {	/*usato sia per il submenu dei film che per 
 	}
 }
 		
-function mostraLogin(loginCorrente) {
+function mostraLogin(loginCorrente) { /*usato per la finestra a tendina di login*/
 	if (document.getElementById(loginCorrente)) {
 		stileLogin = document.getElementById(loginCorrente).style;
 		if (stileLogin.visibility== "visible") {

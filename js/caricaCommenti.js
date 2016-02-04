@@ -4,8 +4,8 @@ function caricaCommenti(nomeFilm) {
     xmlhttp.onreadystatechange = function() {
         var div;
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            div = document.getElementById('commenti'); /* modifico #commenti */
-            div.innerHTML = xmlhttp.responseText;    
+            div = document.getElementById('commenti');
+            div.innerHTML = xmlhttp.responseText; /* inserisco i commenti in #commenti */
         }
     };
         

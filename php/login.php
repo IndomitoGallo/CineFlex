@@ -15,7 +15,7 @@
         /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
         dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
         error_log(date("Y-m-d H:i:s") . " - DB connection failed: " . mysqli_connect_error() . "\n", 3, "./error.log");
-        die("DB_ERROR"); //nel js lanceremo un messaggio: non è stato possibile effettuare la registrazione    
+        die("DB_ERROR"); //nel js lanceremo un messaggio: non è stato possibile effettuare l'accesso    
     }
 
     //Prendo username e password in ingresso per verificare l'autenticazione

@@ -6,11 +6,7 @@ function registra(e) {
         xmlhttp.onreadystatechange = function() {
             var div;
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                if(xmlhttp.responseText == "OK") {
-                    div = document.getElementById('OK');
-                    div.innerHTML = '<h1>Registrazione</h1><p>Registrazione avvenuta con successo.<br>Ora puoi fare login.</p>';
-                }
-                else if(xmlhttp.responseText == "USER_ERROR") {
+                if(xmlhttp.responseText == "USER_ERROR") {
                     div = document.getElementById('ERROR');
                     div.innerHTML = 'Errore: username già esistente!';
                     div.style.color = "red";
@@ -31,12 +27,9 @@ function registra(e) {
                     div.style.textDecoration = "underline";
                     div.style.padding = "5px 15px";
                 }
-                else { /*errore generico in caso dal php venga passata una stringa non riconosciuta*/
-                    div = document.getElementById('ERROR');
-                    div.innerHTML = 'Errore.';
-                    div.style.color = "red";
-                    div.style.textDecoration = "underline";
-                    div.style.padding = "5px 15px";
+                else { // caso in cui la registrazione è andato a buon fine
+                    div = document.getElementById('OK');
+                    div.innerHTML = '<h1>Registrazione</h1><p>Registrazione avvenuta con successo.<br>Ora puoi fare login.</p>';
                 }
             }
         };

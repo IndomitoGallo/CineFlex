@@ -1,4 +1,6 @@
 <?php
+
+	error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_WARNING); //mostra tutto tranne avvisi e avvertimenti
 				 
 	//CONNESSIONE AL DATABASE
 	$servername = "localhost";
@@ -16,7 +18,7 @@
 		/*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
 		dettagli tecnici di cosa è andato storto.*/
 		error_log(date("Y-m-d H:i:s") . " - DB connection failed: " . mysqli_connect_error() . "\n", 3, "./error.log");
-		die();
+		die("<p>Errore di connessione nel caricamento.</p>");
 	}
     
     $film = $_GET['film'];

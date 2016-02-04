@@ -1,4 +1,4 @@
-function invia(e) {
+function invia(e) { //questa funzione viene chiamata quando un utente di utilizzare il "Contattaci"
     
     var form = document.getElementById('contact_form');
     if (form.checkValidity() == true) {   /*viene effettuato un check del form prima del run dello script*/
