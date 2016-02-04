@@ -144,6 +144,13 @@ header {
     color: #FFF;
 }
 
+#recupero {
+    border: none;
+    color: blue;
+    font-size: 11px;
+    text-transform: none;
+}
+
 /******************************* body *********************************/
 
 .col-md-3, .col-md-9 {

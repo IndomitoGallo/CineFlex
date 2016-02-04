@@ -14,24 +14,24 @@
 	
     <!--Script-->
 	<script type="text/javascript" language="Javascript" src="js/menubar.js"></script>
-    <script type="text/javascript" language="Javascript" src="js/listafilm.js"></script>
-	<script type="text/javascript" language="Javascript" src="js/login.js"></script>
+    <script type="text/javascript" language="Javascript" src="js/login.js"></script>
 	<script type="text/javascript" language="Javascript" src="js/aside.js"></script>
-	<script type="text/javascript" language="Javascript" src="js/logout.js"></script>
-	<script type="text/javascript" language="Javascript" src="js/session.js"></script>
-		
+   	<script type="text/javascript" language="Javascript" src="js/logout.js"></script>
+    <script type="text/javascript" language="Javascript" src="js/session.js"></script>
+    <script type="text/javascript" language="Javascript" src="js/recupero.js"></script>
+    
 </head>
 
 <body onload="caricaAside(); session()">
-	
+
     <header>
         <nav class="menubar">
-			<a id="logo" href="index.html">CineFlex</a>
-            <img id="responsive_button" onclick= "mostraMenu('menu'); mostraMenu('login_reg')" src="img/menu.png">
+            <a id="logo" href="index.html">CineFlex</a>
+			<img id="responsive_button" onclick= "mostraMenu('menu'); mostraMenu('login_reg')" src="img/menu.png">
             <ul id="menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a class="selected" href="index.html">Home</a></li>
                 <li onmouseover="mostraMenu('submenu')" onmouseout="mostraMenu('submenu')">
-                    <a class="selected" href="films.php">Film<img id="arrow" src="img/arrow-right.png"></a>					
+                    <a href="films.php">Film<img id="arrow" src="img/arrow-right.png"></a>					
                     <ul id="submenu">
                         <li><a href="films.php?genere=anim">Animazione</a></li>
                         <li><a href="films.php?genere=advn">Avventura</a></li>
@@ -57,73 +57,26 @@
                         <input id="user" name="user" type="text" required><br>
                         <label for="pwd">Password:</label>
                         <input id="pwd" name="pwd" type="password" required><br>
-						<div id="ERROR2"></div>
+                        <div id="ERROR2"></div>
                         <input type="submit" id="submit" name="submit" onclick="login(event)" value="Login">
-						<a id="recupero" href="retrieve_pwd.html">Password dimenticata?</a>
+                        <a id="recupero" href="retrieve_pwd.html">Password dimenticata?</a>
                     </form>
                 </li>
 			</ul>
         </nav>
     </header>
     
-    <div id="container">       
+    <div id="container">     
         <section class="col-md-9 col-sm-9 col-xs-12">
-			<ul id="film">
-				<li onclick="mostraFilm('anim')">
-					<a>Animazione<img id="arrowanim" src="img/arrow-right.png"></a>
-					<ul id="anim" class="genere">
-					</ul>
-				</li>
-                <li onclick="mostraFilm('advn')">
-					<a>Avventura<img id="arrowadvn" src="img/arrow-right.png"></a>
-					<ul id="advn" class="genere">
-					</ul>
-				</li>
-				<li onclick="mostraFilm('cmdy')">
-					<a>Commedia<img id="arrowcmdy" src="img/arrow-right.png"></a>
-					<ul id="cmdy" class="genere">
-					</ul>
-				</li>
-				<li onclick="mostraFilm('dram')">
-					<a>Drammatico<img id="arrowdram" src="img/arrow-right.png"></a>
-					<ul id="dram" class="genere">
-					</ul>
-				</li>
-				<li onclick="mostraFilm('fnts')">
-					<a>Fantascienza<img id="arrowfnts" src="img/arrow-right.png"></a>
-					<ul id="fnts" class="genere">
-						<li><a href="film/alien.html">Alien</a></li>
-						<li><a href="film/interstellar.html">Interstellar</a></li>
-					</ul>
-				</li>
-                <li onclick="mostraFilm('fnty')">
-					<a>Fantasy<img id="arrowfnty" src="img/arrow-right.png"></a>
-					<ul id="fnty" class="genere">
-					</ul>
-				</li>
-				<li onclick="mostraFilm('war')">
-					<a>Guerra<img id="arrowwar" src="img/arrow-right.png"></a>
-					<ul id="war" class="genere">
-					</ul>
-				</li>
-                <li onclick="mostraFilm('hror')">
-					<a>Horror<img id="arrowhror" src="img/arrow-right.png"></a>
-					<ul id="hror" class="genere">
-						<li><a href="film/black_sheep.html">Black Sheep</a></li>
-						<li><a href="film/wrong_turn.html">Wrong Turn</a></li>
-					</ul>				
-				</li>
-                <li onclick="mostraFilm('thrl')">
-					<a>Thriller<img id="arrowthrl" src="img/arrow-right.png"></a>
-					<ul id="thrl" class="genere">
-					</ul>
-				</li>
-				<li onclick="mostraFilm('wstr')">
-					<a>Western<img id="arrowwstr" src="img/arrow-right.png"></a>
-					<ul id="wstr" class="genere">
-					</ul>
-				</li>
-			</ul>       
+            <h1>Recupero Password</h1>
+            <div id="OK">
+                <p>Puoi recuperare la password del profilo, inserendo il tuo indirizzo email:</p>
+                <div id="MSG"></div>
+                <form id="recupero_form">
+                    <input type="email" id="mail" name="mail" placeholder="email@example.com" size="30" maxlength="30" required><br>
+                    <input type="submit" id="submit" name="submit" onclick="recupero(event)" value="Invia">
+                </form>
+            </div>
         </section>
 		<aside id="aside" class="col-md-3 col-sm-3 col-xs-12"></aside> 
     </div>
@@ -132,14 +85,6 @@
         <small id="copyright">Copyright © 2016 cineflex.it - All Rights Reserved.</small>
         <small id="webmaster">Webmaster: Luca Talocci & Lorenzo Bernabei</small>
     </footer>
-	
-	<?php
-	if(isset($_GET['genere'])) {?>
-		<script type="text/javascript">
-			mostraFilm("<?php echo $_GET['genere']; ?>");
-		</script>
-	<?php }	
-	?>
 
 </body>
 </html>

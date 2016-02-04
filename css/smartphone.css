@@ -158,6 +158,15 @@ header {
     color: #FFF;
 }
 
+#recupero {
+    border: none;
+    color: blue;
+    font-size: 11px;
+    text-transform: none;
+    background-color: #F5F5F5;
+    border-radius: 6px;
+}
+
 /******************************* body *********************************/
 
 .col-xs-12{
