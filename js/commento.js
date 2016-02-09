@@ -26,8 +26,10 @@ function commento(filmCorrente) { //questa funzione viene chiamata quando l'uten
         
         var nota = document.getElementById('nota').value;
         
-        var params = "nota=" + nota + "&film=" + filmCorrente;
-        
+        /*il metodo replace in questo caso rimpiazza ogni \n con <br> per visualizzare correttamente
+        il commento*/
+        var params = "nota=" + nota.replace(/\n/g, "<br>") + "&film=" + filmCorrente; // la funzio
+
         xmlhttp.open("GET", "../php/commento.php?" + params, true);
         xmlhttp.send();
     }

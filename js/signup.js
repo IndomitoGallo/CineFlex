@@ -8,21 +8,21 @@ function registra(e) {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 if(xmlhttp.responseText == "USER_ERROR") {
                     div = document.getElementById('ERROR');
-                    div.innerHTML = 'Errore: username già esistente!';
+                    div.innerHTML = 'Username già esistente!';
                     div.style.color = "red";
                     div.style.textDecoration = "underline";
                     div.style.padding = "5px 15px";
                 }
                 else if(xmlhttp.responseText == "MAIL_ERROR") {
                     div = document.getElementById('ERROR');
-                    div.innerHTML = 'Errore: esiste già un account registrato con quella email!';
+                    div.innerHTML = 'Esiste già un account registrato con quella email!';
                     div.style.color = "red";
                     div.style.textDecoration = "underline";
                     div.style.padding = "5px 15px";
                 }
                 else if(xmlhttp.responseText == "DB_ERROR") {
                     div = document.getElementById('ERROR');
-                    div.innerHTML = 'Errore: non è stato possibile effettuare la registrazione, riprova più tardi.';
+                    div.innerHTML = 'Non è stato possibile effettuare la registrazione, riprova più tardi.';
                     div.style.color = "red";
                     div.style.textDecoration = "underline";
                     div.style.padding = "5px 15px";

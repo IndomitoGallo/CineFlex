@@ -12,15 +12,12 @@
     $dbname = "dbpw";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     
-	//La seguente funzione forza la trasmissione dei dati con la codifica utf8
-	mysqli_set_charset($conn, "utf8");
-    
     //controllo sulla connessione
     if(!$conn) {
         /*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
         dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
         error_log(date("Y-m-d H:i:s") . " - DB connection failed: " . mysqli_connect_error() . "\n", 3, "./error.log");
-        die("DB_ERROR"); //nel js lanceremo un messaggio: non è stato possibile inserire il commento   
+        die("DB_ERROR"); //nel js lanceremo un messaggio: non è stato possibile inserire il commento
     }
 
     //Prendo l'utente dalla sessione, la nota e il film dallo script in js
@@ -29,7 +26,7 @@
     $film = $_GET['film'];    
     
     $data = date("Y-m-d H:i:s");
-    
+
     $sql = "INSERT INTO commento VALUES(NULL, '{$user}','{$nota}', '{$data}', '{$film}')";
 
     //Eseguo la query

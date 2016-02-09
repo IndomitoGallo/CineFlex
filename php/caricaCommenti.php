@@ -10,9 +10,6 @@
 	$dbname = "dbpw";
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 					
-	//La seguente funzione forza la trasmissione dei dati con la codifica utf8
-	mysqli_set_charset($conn, "utf8");
-					
 	//controllo sulla connessione
 	if(!$conn) {
 		/*effettuo il log dell'errore su un file di testo, all'amministratore del sito interessano i
