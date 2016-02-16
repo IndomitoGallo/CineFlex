@@ -47,7 +47,7 @@ function login(e, filmCorrente) {
                     
                     div = document.getElementById('form_comm'); /* aggiungo la possibilità di commentare */
                     div.innerHTML = '<textarea id="nota" name="nota" rows="4" maxlength="500" placeholder="Scrivi ..."  required></textarea><br>' +
-                                    '<input type="submit" name="submit" value="Invia" onclick="commento(&quot;' + filmCorrente + '&quot;)">';
+                                    '<input type="submit" name="submit" value="Invia" onclick="commento(event, &quot;' + filmCorrente + '&quot;)">';
                 }
             }
         };

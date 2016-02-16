@@ -8,7 +8,7 @@ function mostraMsg() { //questa funzione è chiamata se si prova a commentare ma
 
 }
 
-function commento(filmCorrente) { //questa funzione viene chiamata quando l'utente inserisce un commento
+function commento(e, filmCorrente) { //questa funzione viene chiamata quando l'utente inserisce un commento
     
     var form = document.getElementById('form_comm');
     if (form.checkValidity() == true) {   /*viene effettuato un check del form prima del run dello script*/
@@ -16,10 +16,13 @@ function commento(filmCorrente) { //questa funzione viene chiamata quando l'uten
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 if(xmlhttp.responseText == "DB_ERROR") {
-                    /*viene utilizzato un semplice alert e non un messaggio dinamico nell'HTML, perchè in questo caso,
-                      diversamente dagli altri, viene ricaricata la pagina dopo l'inserimento del commento.
-                      Questo per far visualizzare immediatamente all'utente il commento inserito.*/
-                    alert('Errore: non è stato possibile inserire il commento, riprova più tardi.');
+                    var div = document.getElementById('msg');
+                    div.innerHTML = "Non è stato possibile inserire il commento!";
+                    div.style.color = "red";
+                    div.style.textDecoration = "underline";
+                    div.style.padding = "0px 15px 12px 15px";
+                } else { //caso di inserimento riuscito
+                    window.location.assign(""); // ricarica la pagina per visualizzare il nuovo commento inserito
                 }
             }
         };
@@ -32,6 +35,9 @@ function commento(filmCorrente) { //questa funzione viene chiamata quando l'uten
 
         xmlhttp.open("GET", "../php/commento.php?" + params, true);
         xmlhttp.send();
+        
+        /*elimina l'azione di default associata all'input type="submit" di ricaricare tutta la pagina*/
+        e.preventDefault();
     }
 
 }

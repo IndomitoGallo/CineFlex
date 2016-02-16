@@ -35,6 +35,8 @@
         dettagli tecnici di cosa è andato storto, invece all'utente lancio un messaggio generico*/
         error_log(date("Y-m-d H:i:s") . " - DB query failed on: " . $sql . "\nMessagge: " . mysqli_error($conn) . "\n", 3, "./error.log");
         echo "DB_ERROR"; //nel js lanceremo un messaggio: non è stato possibile inserire il commento
+    } else {
+        echo "OK";
     }
     
     //Chiudo la connessione
